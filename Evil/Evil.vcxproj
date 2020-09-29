@@ -76,7 +76,8 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>evilpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>EVIL_PLATFORM_WINDOWS;EVIL_BUILD_DLL;EVIL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -96,7 +97,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>evilpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>EVIL_PLATFORM_WINDOWS;EVIL_BUILD_DLL;EVIL_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -120,7 +122,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>evilpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>EVIL_PLATFORM_WINDOWS;EVIL_BUILD_DLL;EVIL_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -147,11 +150,19 @@
     <ClInclude Include="src\Evil\Application.h" />
     <ClInclude Include="src\Evil\Core.h" />
     <ClInclude Include="src\Evil\EntryPoint.h" />
+    <ClInclude Include="src\Evil\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\Evil\Events\Event.h" />
+    <ClInclude Include="src\Evil\Events\KeyEvent.h" />
+    <ClInclude Include="src\Evil\Events\MouseEvent.h" />
     <ClInclude Include="src\Evil\Log.h" />
+    <ClInclude Include="src\evilpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Evil\Application.cpp" />
     <ClCompile Include="src\Evil\Log.cpp" />
+    <ClCompile Include="src\evilpch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

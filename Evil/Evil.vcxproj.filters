@@ -4,6 +4,9 @@
     <Filter Include="Evil">
       <UniqueIdentifier>{95E9847C-8120-860D-2A0D-6C101623020F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Evil\Events">
+      <UniqueIdentifier>{D95B8BF8-4511-04EE-CE05-FEC43ABAFAF1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Evil.h" />
@@ -16,9 +19,22 @@
     <ClInclude Include="src\Evil\EntryPoint.h">
       <Filter>Evil</Filter>
     </ClInclude>
+    <ClInclude Include="src\Evil\Events\ApplicationEvent.h">
+      <Filter>Evil\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Events\Event.h">
+      <Filter>Evil\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Events\KeyEvent.h">
+      <Filter>Evil\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Events\MouseEvent.h">
+      <Filter>Evil\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Evil\Log.h">
       <Filter>Evil</Filter>
     </ClInclude>
+    <ClInclude Include="src\evilpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Evil\Application.cpp">
@@ -27,5 +43,6 @@
     <ClCompile Include="src\Evil\Log.cpp">
       <Filter>Evil</Filter>
     </ClCompile>
+    <ClCompile Include="src\evilpch.cpp" />
   </ItemGroup>
 </Project>

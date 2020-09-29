@@ -18,6 +18,9 @@ project "Evil"
 	targetdir("bin/" .. outputdir .. "/%{prj.name}")
 	objdir("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "evilpch.h"
+	pchsource "Evil/src/evilpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
