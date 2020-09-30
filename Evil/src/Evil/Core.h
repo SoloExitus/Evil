@@ -10,4 +10,12 @@
 	#error Evil Engine only supports Windows!
 #endif //EVIL_PLATFORM_WINDOWS
 
+#ifdef EVIL_ENABLE_ASSERTS
+	#define EVIL_ASSERT(x, ...) { if(!(x)){ EVIL_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak()}; } }
+	#define EVIL_CORE_ASSERT(x, ...) { if(!(x)){ EVIL_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak()}; } }
+#else
+	#define EVIL_ASSERT(x, ...)
+	#define EVIL_CORE_ASSERT(x, ...)
+#endif //EVIL_ENABLE_ASSERTS
+
 #define BIT(x) (1 << x)

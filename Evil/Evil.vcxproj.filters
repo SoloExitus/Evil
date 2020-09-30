@@ -35,6 +35,8 @@
       <Filter>Evil</Filter>
     </ClInclude>
     <ClInclude Include="src\evilpch.h" />
+    <ClInclude Include="src\Evil\Window.h" />
+    <ClInclude Include="src\Evil\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Evil\Application.cpp">
@@ -44,5 +46,6 @@
       <Filter>Evil</Filter>
     </ClCompile>
     <ClCompile Include="src\evilpch.cpp" />
+    <ClCompile Include="src\Evil\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

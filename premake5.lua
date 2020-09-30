@@ -10,6 +10,12 @@ workspace "Evil"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Evil/Vendor/GLFW/include"
+
+include "Evil/Vendor/GLFW"
+
 project "Evil"
 	location "Evil"
 	kind "SharedLib"
@@ -30,8 +36,16 @@ project "Evil"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/Vendor/spdlog/include"
+		"%{prj.name}/Vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
 	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
+	}
+
 
 	filter "system:windows"
 		cppdialect "C++17"

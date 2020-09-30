@@ -12,6 +12,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "Evil/Log.h"
+
 #ifdef EVIL_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif
