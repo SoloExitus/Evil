@@ -158,17 +158,17 @@
     <ClInclude Include="src\Evil\Events\KeyEvent.h" />
     <ClInclude Include="src\Evil\Events\MouseEvent.h" />
     <ClInclude Include="src\Evil\Log.h" />
-    <ClInclude Include="src\evilpch.h" />
-    <ClInclude Include="src\Evil\Window.h" />
     <ClInclude Include="src\Evil\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\Evil\Window.h" />
+    <ClInclude Include="src\evilpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Evil\Application.cpp" />
     <ClCompile Include="src\Evil\Log.cpp" />
+    <ClCompile Include="src\Evil\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\evilpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\Evil\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Vendor\GLFW\GLFW.vcxproj">

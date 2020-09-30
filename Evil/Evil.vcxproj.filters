@@ -7,6 +7,12 @@
     <Filter Include="Evil\Events">
       <UniqueIdentifier>{D95B8BF8-4511-04EE-CE05-FEC43ABAFAF1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Evil\Platform">
+      <UniqueIdentifier>{89BDEF64-F57D-6B9B-BEB8-B4182A38B077}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Evil\Platform\Windows">
+      <UniqueIdentifier>{C3E002A0-2F4D-BE9A-F840-56F8646CE002}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Evil.h" />
@@ -34,9 +40,13 @@
     <ClInclude Include="src\Evil\Log.h">
       <Filter>Evil</Filter>
     </ClInclude>
+    <ClInclude Include="src\Evil\Platform\Windows\WindowsWindow.h">
+      <Filter>Evil\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Window.h">
+      <Filter>Evil</Filter>
+    </ClInclude>
     <ClInclude Include="src\evilpch.h" />
-    <ClInclude Include="src\Evil\Window.h" />
-    <ClInclude Include="src\Evil\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Evil\Application.cpp">
@@ -45,7 +55,9 @@
     <ClCompile Include="src\Evil\Log.cpp">
       <Filter>Evil</Filter>
     </ClCompile>
+    <ClCompile Include="src\Evil\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Evil\Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\evilpch.cpp" />
-    <ClCompile Include="src\Evil\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>
