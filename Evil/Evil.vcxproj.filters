@@ -37,6 +37,12 @@
     <ClInclude Include="src\Evil\Events\MouseEvent.h">
       <Filter>Evil\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Evil\Layer.h">
+      <Filter>Evil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\LayerStack.h">
+      <Filter>Evil</Filter>
+    </ClInclude>
     <ClInclude Include="src\Evil\Log.h">
       <Filter>Evil</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Evil\Application.cpp">
+      <Filter>Evil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Evil\Layer.cpp">
+      <Filter>Evil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Evil\LayerStack.cpp">
       <Filter>Evil</Filter>
     </ClCompile>
     <ClCompile Include="src\Evil\Log.cpp">

@@ -84,6 +84,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -109,6 +110,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -135,6 +137,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -157,6 +160,8 @@
     <ClInclude Include="src\Evil\Events\Event.h" />
     <ClInclude Include="src\Evil\Events\KeyEvent.h" />
     <ClInclude Include="src\Evil\Events\MouseEvent.h" />
+    <ClInclude Include="src\Evil\Layer.h" />
+    <ClInclude Include="src\Evil\LayerStack.h" />
     <ClInclude Include="src\Evil\Log.h" />
     <ClInclude Include="src\Evil\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Evil\Window.h" />
@@ -164,6 +169,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Evil\Application.cpp" />
+    <ClCompile Include="src\Evil\Layer.cpp" />
+    <ClCompile Include="src\Evil\LayerStack.cpp" />
     <ClCompile Include="src\Evil\Log.cpp" />
     <ClCompile Include="src\Evil\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\evilpch.cpp">
