@@ -6,6 +6,8 @@
 #include "Evil/Layer.h"
 #include "Evil/Log.h"
 
+#include "Evil/ImGui/ImGuiLayer.h"
+
 // ---Entry Point ------------------------
 #include "Evil/EntryPoint.h"
 // ---------------------------------------

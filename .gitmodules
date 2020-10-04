@@ -4,3 +4,6 @@
 [submodule "Evil/Vendor/GLFW"]
 	path = Evil/Vendor/GLFW
 	url = https://github.com/TheCherno/glfw
+[submodule "Evil/Vendor/imgui"]
+	path = Evil/Vendor/imgui
+	url = https://github.com/TheCherno/imgui

@@ -7,8 +7,14 @@
     <Filter Include="Evil\Events">
       <UniqueIdentifier>{D95B8BF8-4511-04EE-CE05-FEC43ABAFAF1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Evil\ImGui">
+      <UniqueIdentifier>{7F7A7DD1-6B32-BF1E-D439-987AC0105A0F}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Evil\Platform">
       <UniqueIdentifier>{89BDEF64-F57D-6B9B-BEB8-B4182A38B077}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Evil\Platform\OpenGL">
+      <UniqueIdentifier>{9DB2D08D-8941-5A57-3260-6E521ECE6AFD}</UniqueIdentifier>
     </Filter>
     <Filter Include="Evil\Platform\Windows">
       <UniqueIdentifier>{C3E002A0-2F4D-BE9A-F840-56F8646CE002}</UniqueIdentifier>
@@ -37,6 +43,9 @@
     <ClInclude Include="src\Evil\Events\MouseEvent.h">
       <Filter>Evil\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Evil\ImGui\ImGuiLayer.h">
+      <Filter>Evil\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\Evil\Layer.h">
       <Filter>Evil</Filter>
     </ClInclude>
@@ -45,6 +54,9 @@
     </ClInclude>
     <ClInclude Include="src\Evil\Log.h">
       <Filter>Evil</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Platform\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>Evil\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Evil\Platform\Windows\WindowsWindow.h">
       <Filter>Evil\Platform\Windows</Filter>
@@ -58,6 +70,9 @@
     <ClCompile Include="src\Evil\Application.cpp">
       <Filter>Evil</Filter>
     </ClCompile>
+    <ClCompile Include="src\Evil\ImGui\ImGuiLayer.cpp">
+      <Filter>Evil\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\Evil\Layer.cpp">
       <Filter>Evil</Filter>
     </ClCompile>
@@ -66,6 +81,9 @@
     </ClCompile>
     <ClCompile Include="src\Evil\Log.cpp">
       <Filter>Evil</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Evil\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>Evil\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Evil\Platform\Windows\WindowsWindow.cpp">
       <Filter>Evil\Platform\Windows</Filter>
