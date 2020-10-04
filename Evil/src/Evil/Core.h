@@ -11,12 +11,13 @@
 #endif //EVIL_PLATFORM_WINDOWS
 
 #ifdef EVIL_DEBUG
-	#define EVIL_ENABLE_ASSERTS TRUE
-#endif
+	#define EVIL_ENABLE_ASSERTS
+#endif // EVIL_DEBUG
 
-#if EVIL_ENABLE_ASSERTS
-	#define EVIL_ASSERT(x, ...) { if(!(x)){ EVIL_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak()}; } }
-	#define EVIL_CORE_ASSERT(x, ...) { if(!(x)){ EVIL_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak()}; } }
+
+#ifdef EVIL_ENABLE_ASSERTS
+#define EVIL_ASSERT(x, ...) { if(!(x)) { EVIL_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#define EVIL_CORE_ASSERT(x, ...) { if(!(x)) { EVIL_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 #else
 	#define EVIL_ASSERT(x, ...)
 	#define EVIL_CORE_ASSERT(x, ...)
