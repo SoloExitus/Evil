@@ -67,6 +67,8 @@
     <ClInclude Include="src\evilpch.h" />
     <ClInclude Include="src\Evil\Input.h" />
     <ClInclude Include="src\Evil\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\Evil\KeyCodes.h" />
+    <ClInclude Include="src\Evil\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Evil\Application.cpp">

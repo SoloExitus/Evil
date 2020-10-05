@@ -159,9 +159,11 @@
     <ClInclude Include="src\Evil\Events\MouseEvent.h" />
     <ClInclude Include="src\Evil\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Evil\Input.h" />
+    <ClInclude Include="src\Evil\KeyCodes.h" />
     <ClInclude Include="src\Evil\Layer.h" />
     <ClInclude Include="src\Evil\LayerStack.h" />
     <ClInclude Include="src\Evil\Log.h" />
+    <ClInclude Include="src\Evil\MouseButtonCodes.h" />
     <ClInclude Include="src\Evil\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Evil\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Evil\Platform\Windows\WindowsWindow.h" />
