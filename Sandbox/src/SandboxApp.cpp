@@ -38,7 +38,6 @@ public:
 	SandBox()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Evil::ImGuiLayer());
 	}
 	~SandBox()
 	{
