@@ -6,7 +6,8 @@ class ExampleLayer : public Evil::Layer
 public:
 	ExampleLayer()
 		: Layer("Example")
-	{}
+	{
+	}
 
 	void OnUpdate() override
 	{

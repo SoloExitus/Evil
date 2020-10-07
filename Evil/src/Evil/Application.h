@@ -7,7 +7,7 @@
 #include "Evil/Events/Event.h"
 #include "Evil/Events/ApplicationEvent.h"
 
-
+#include "Evil/ImGui/ImGuiLayer.h"
 
 namespace Evil
 {
@@ -31,6 +31,7 @@ namespace Evil
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 	private:
