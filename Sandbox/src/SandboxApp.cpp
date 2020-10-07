@@ -1,6 +1,8 @@
 
 #include <Evil.h>
 
+#include "imgui/imgui.h"
+
 class ExampleLayer : public Evil::Layer
 {
 public:
@@ -16,6 +18,13 @@ public:
 		if (Evil::Input::IsKeyPressed(EVIL_KEY_TAB))
 			EVIL_TRACE("Tab kay is pressed (poll)!")
 
+	}
+
+	virtual void OnImGuiRender() override
+	{
+		ImGui::Begin("Test");
+		ImGui::Text("Hello World");
+		ImGui::End();
 	}
 
 	void OnEvent(Evil::Event& event) override
