@@ -142,6 +142,7 @@
   <ItemGroup>
     <ClInclude Include="src\Evil\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Evil\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Evil\Renderer\Shader.h" />
     <ClInclude Include="Vendor\glm\glm\common.hpp" />
     <ClInclude Include="Vendor\glm\glm\detail\_features.hpp" />
     <ClInclude Include="Vendor\glm\glm\detail\_fixes.hpp" />
@@ -583,6 +584,7 @@
     <ClCompile Include="src\evilpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Evil\Renderer\Shader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Vendor\GLFW\GLFW.vcxproj">
