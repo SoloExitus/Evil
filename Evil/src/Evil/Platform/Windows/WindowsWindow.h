@@ -1,8 +1,10 @@
 #pragma once
 
 #include "Evil/Window.h"
+#include "Evil/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>
+
 
 namespace Evil
 {
@@ -28,6 +30,8 @@ namespace Evil
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
+
+		GraphicsContext* m_Context;
 
 		struct WindowData
 		{

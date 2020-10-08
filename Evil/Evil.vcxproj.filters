@@ -1323,6 +1323,8 @@
     <ClInclude Include="src\evilpch.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\Evil\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Evil\Platform\OpenGL\OpenGLContext.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Evil\Application.cpp">
@@ -1352,5 +1354,6 @@
     <ClCompile Include="src\evilpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Evil\Platform\OpenGL\OpenGLContext.cpp" />
   </ItemGroup>
 </Project>
