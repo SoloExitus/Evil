@@ -1326,6 +1326,9 @@
     <ClInclude Include="src\Evil\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Evil\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Evil\Renderer\Shader.h" />
+    <ClInclude Include="src\Evil\Renderer\Buffer.h" />
+    <ClInclude Include="src\Evil\Platform\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="src\Evil\Renderer\Renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Evil\Application.cpp">
@@ -1357,5 +1360,8 @@
     </ClCompile>
     <ClCompile Include="src\Evil\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Evil\Renderer\Shader.cpp" />
+    <ClCompile Include="src\Evil\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Evil\Platform\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="src\Evil\Renderer\Renderer.cpp" />
   </ItemGroup>
 </Project>
