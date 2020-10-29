@@ -17,9 +17,6 @@ namespace Evil
 		: Layer("ImGuiLayer")
 	{
 	}
-	ImGuiLayer::~ImGuiLayer()
-	{
-	}
 
 	void ImGuiLayer::OnAttach()
 	{ 

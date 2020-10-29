@@ -10,8 +10,8 @@
 #include "Evil/ImGui/ImGuiLayer.h"
 
 #include "Evil/Renderer/Shader.h"
-
 #include "Evil/Renderer/Buffer.h"
+#include "Evil/Renderer/VertexArray.h"
 
 namespace Evil
 {
@@ -19,7 +19,7 @@ namespace Evil
 	{
 	public:
 		Application();
-		virtual ~Application();
+		virtual ~Application() = default;
 
 		void Run();
 
@@ -39,10 +39,11 @@ namespace Evil
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 
-		unsigned int m_VertexArray;
-		std::unique_ptr<Shader> m_Shader;
-		std::unique_ptr<VertexBuffer> m_VertexBuffer;
-		std::unique_ptr<IndexBuffer> m_IndexBuffer;
+		std::shared_ptr<Shader> m_Shader;
+		std::shared_ptr<VertexArray> m_VertexArray;
+
+		std::shared_ptr<Shader> m_BlueShader;
+		std::shared_ptr<VertexArray> m_SquareVA;
 	private:
 		static Application* s_Instance;
 	};

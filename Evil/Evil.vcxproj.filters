@@ -37,8 +37,14 @@
     <Filter Include="src\Evil\Platform">
       <UniqueIdentifier>{E03225DC-4C49-2372-95C0-AE930116F4F9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Evil\Platform\OpenGL">
+      <UniqueIdentifier>{14E00F98-0005-5F18-2950-44A815D45D36}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Evil\Platform\Windows">
       <UniqueIdentifier>{1ABD27F2-867F-5B7C-CF2F-EA083B31345A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Evil\Renderer">
+      <UniqueIdentifier>{323A02B7-9E50-004D-E7C7-8B6E531DD1D4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1311,11 +1317,35 @@
     <ClInclude Include="src\Evil\MouseButtonCodes.h">
       <Filter>src\Evil</Filter>
     </ClInclude>
+    <ClInclude Include="src\Evil\Platform\OpenGL\OpenGLBuffer.h">
+      <Filter>src\Evil\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Platform\OpenGL\OpenGLContext.h">
+      <Filter>src\Evil\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Platform\OpenGL\OpenGLVertexArray.h">
+      <Filter>src\Evil\Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Evil\Platform\Windows\WindowsInput.h">
       <Filter>src\Evil\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\Evil\Platform\Windows\WindowsWindow.h">
       <Filter>src\Evil\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Renderer\Buffer.h">
+      <Filter>src\Evil\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Renderer\GraphicsContext.h">
+      <Filter>src\Evil\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Renderer\Renderer.h">
+      <Filter>src\Evil\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Renderer\Shader.h">
+      <Filter>src\Evil\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Renderer\VertexArray.h">
+      <Filter>src\Evil\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Evil\Window.h">
       <Filter>src\Evil</Filter>
@@ -1323,12 +1353,6 @@
     <ClInclude Include="src\evilpch.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Evil\Renderer\GraphicsContext.h" />
-    <ClInclude Include="src\Evil\Platform\OpenGL\OpenGLContext.h" />
-    <ClInclude Include="src\Evil\Renderer\Shader.h" />
-    <ClInclude Include="src\Evil\Renderer\Buffer.h" />
-    <ClInclude Include="src\Evil\Platform\OpenGL\OpenGLBuffer.h" />
-    <ClInclude Include="src\Evil\Renderer\Renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Evil\Application.cpp">
@@ -1349,19 +1373,35 @@
     <ClCompile Include="src\Evil\Log.cpp">
       <Filter>src\Evil</Filter>
     </ClCompile>
+    <ClCompile Include="src\Evil\Platform\OpenGL\OpenGLBuffer.cpp">
+      <Filter>src\Evil\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Evil\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>src\Evil\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Evil\Platform\OpenGL\OpenGLVertexArray.cpp">
+      <Filter>src\Evil\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Evil\Platform\Windows\WindowsInput.cpp">
       <Filter>src\Evil\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Evil\Platform\Windows\WindowsWindow.cpp">
       <Filter>src\Evil\Platform\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="src\Evil\Renderer\Buffer.cpp">
+      <Filter>src\Evil\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Evil\Renderer\Renderer.cpp">
+      <Filter>src\Evil\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Evil\Renderer\Shader.cpp">
+      <Filter>src\Evil\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Evil\Renderer\VertexArray.cpp">
+      <Filter>src\Evil\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\evilpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Evil\Platform\OpenGL\OpenGLContext.cpp" />
-    <ClCompile Include="src\Evil\Renderer\Shader.cpp" />
-    <ClCompile Include="src\Evil\Renderer\Buffer.cpp" />
-    <ClCompile Include="src\Evil\Platform\OpenGL\OpenGLBuffer.cpp" />
-    <ClCompile Include="src\Evil\Renderer\Renderer.cpp" />
   </ItemGroup>
 </Project>

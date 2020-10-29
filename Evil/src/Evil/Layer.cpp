@@ -7,6 +7,4 @@ namespace Evil
 		: m_DebugName(debugName)
 	{}
 
-	Layer::~Layer()
-	{}
 }

@@ -24,7 +24,7 @@ namespace Evil
 #define EVIL_CORE_INFO(...)		::Evil::Log::GetCoreLogger()->info(__VA_ARGS__);
 #define EVIL_CORE_WARN(...)		::Evil::Log::GetCoreLogger()->warn(__VA_ARGS__);
 #define EVIL_CORE_ERROR(...)	::Evil::Log::GetCoreLogger()->error(__VA_ARGS__);
-#define EVIL_CORE_FATAL(...)	::Evil::Log::GetCoreLogger()->fatal(__VA_ARGS__);
+#define EVIL_CORE_CRITICAL(...)	::Evil::Log::GetCoreLogger()->critical(__VA_ARGS__);
 
 // Client log macros
 
@@ -32,4 +32,4 @@ namespace Evil
 #define EVIL_INFO(...)		::Evil::Log::GetClientLogger()->info(__VA_ARGS__);
 #define EVIL_WARN(...)		::Evil::Log::GetClientLogger()->warn(__VA_ARGS__);
 #define EVIL_ERROR(...)		::Evil::Log::GetClientLogger()->error(__VA_ARGS__);
-#define EVIL_FATAL(...)		::Evil::Log::GetClientLogger()->fatal(__VA_ARGS__);
+#define EVIL_CRITICAL(...)	::Evil::Log::GetClientLogger()->critical(__VA_ARGS__);
