@@ -140,6 +140,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Evil\Renderer\OrthographicCamera.h" />
     <ClInclude Include="src\Evil\Platform\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\Evil\Renderer\RenderCommand.h" />
     <ClInclude Include="src\Evil\Renderer\RendererAPI.h" />
@@ -580,6 +581,7 @@
     <ClInclude Include="src\evilpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Evil\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="src\Evil\Application.cpp" />
     <ClCompile Include="src\Evil\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Evil\ImGui\ImGuiLayer.cpp" />
