@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Evil/Core.h"
+#include "Evil/Core/Timestep.h"
 #include "Evil/Events/Event.h"
 
 namespace Evil
@@ -13,7 +14,7 @@ namespace Evil
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {}
 
