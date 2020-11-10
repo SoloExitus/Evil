@@ -1366,6 +1366,7 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\Evil\Core\Timestep.h" />
+    <ClInclude Include="src\Evil\Platform\OpenGL\OpenGLShader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Evil\Application.cpp">
@@ -1428,5 +1429,6 @@
     <ClCompile Include="src\evilpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Evil\Platform\OpenGL\OpenGLShader.cpp" />
   </ItemGroup>
 </Project>
