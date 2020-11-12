@@ -24,7 +24,7 @@ public:
 			 0.0f,  0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f
 		};
 
-		std::shared_ptr<Evil::VertexBuffer> vertexBuffer;
+		Evil::Ref<Evil::VertexBuffer> vertexBuffer;
 		vertexBuffer.reset(Evil::VertexBuffer::Create(vertices, sizeof(vertices)));
 		Evil::BufferLayout layout = {
 			{ Evil::ShaderDataType::Float3, "a_Position" },
@@ -35,7 +35,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t indices[3] = { 0, 1, 2 };
-		std::shared_ptr<Evil::IndexBuffer> indexBuffer;
+		Evil::Ref<Evil::IndexBuffer> indexBuffer;
 		indexBuffer.reset(Evil::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
@@ -49,7 +49,7 @@ public:
 			-0.5f,  0.5f, 0.0f
 		};
 
-		std::shared_ptr<Evil::VertexBuffer> squareVB;
+		Evil::Ref<Evil::VertexBuffer> squareVB;
 		squareVB.reset(Evil::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 
 		squareVB->SetLayout({
@@ -59,7 +59,7 @@ public:
 		m_SquareVA->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		std::shared_ptr<Evil::IndexBuffer> squareIB;
+		Evil::Ref<Evil::IndexBuffer> squareIB;
 		squareIB.reset(Evil::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
@@ -192,11 +192,11 @@ public:
 	}
 
 private:
-	std::shared_ptr<Evil::Shader> m_Shader;
-	std::shared_ptr<Evil::VertexArray> m_VertexArray;
+	Evil::Ref<Evil::Shader> m_Shader;
+	Evil::Ref<Evil::VertexArray> m_VertexArray;
 
-	std::shared_ptr<Evil::Shader> m_FlatColorShader;
-	std::shared_ptr<Evil::VertexArray> m_SquareVA;
+	Evil::Ref<Evil::Shader> m_FlatColorShader;
+	Evil::Ref<Evil::VertexArray> m_SquareVA;
 
 	Evil::OrthographicCamera m_Camera;
 
