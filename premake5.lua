@@ -16,6 +16,7 @@ IncludeDir["GLFW"] = "Evil/Vendor/GLFW/include"
 IncludeDir["Glad"] = "Evil/Vendor/Glad/include"
 IncludeDir["ImGui"] = "Evil/Vendor/imgui"
 IncludeDir["glm"] = "Evil/Vendor/glm"
+IncludeDir["stb_image"] = "Evil/Vendor/stb_image"
 
 group "Dependencies"
 	include "Evil/Vendor/GLFW"
@@ -41,6 +42,8 @@ project "Evil"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/Vendor/stb_image/**.h",
+		"%{prj.name}/Vendor/stb_image/**.cpp",
 		"%{prj.name}/Vendor/glm/glm/**.hpp",
 		"%{prj.name}/Vendor/glm/glm/**.inl",
 	}
@@ -57,7 +60,8 @@ project "Evil"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
 	}
 
 	links

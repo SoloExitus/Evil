@@ -19,8 +19,9 @@
 #include "Evil/Renderer/Renderer.h"
 #include "Evil/Renderer/RenderCommand.h"
 
-#include "Evil/Renderer/Shader.h"
 #include "Evil/Renderer/Buffer.h"
+#include "Evil/Renderer/Shader.h"
+#include "Evil/Renderer/Texture.h"
 #include "Evil/Renderer/VertexArray.h"
 
 #include "Evil/Renderer/OrthographicCamera.h"

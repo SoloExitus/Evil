@@ -41,12 +41,12 @@ public:
 
 		m_SquareVA.reset(Evil::VertexArray::Create());
 
-		float squareVertices[3 * 4] =
+		float squareVertices[5 * 4] =
 		{
-			-0.5f, -0.5f, 0.0f,
-			 0.5f, -0.5f, 0.0f,
-			 0.5f,  0.5f, 0.0f,
-			-0.5f,  0.5f, 0.0f
+			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
+			 0.5f, -0.5f, 0.0f, 1.0f, 0.0f,
+			 0.5f,  0.5f, 0.0f, 1.0f, 1.0f,
+			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
 
 		Evil::Ref<Evil::VertexBuffer> squareVB;
@@ -54,8 +54,9 @@ public:
 
 		squareVB->SetLayout({
 			{ Evil::ShaderDataType::Float3, "a_Position" },
-			}
-		);
+			{ Evil::ShaderDataType::Float2, "a_TexCoord" },
+			});
+
 		m_SquareVA->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
@@ -133,6 +134,46 @@ public:
 		)";
 
 		m_FlatColorShader.reset(Evil::Shader::Create(flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
+
+		std::string textureShaderVertexSrc = R"(
+			#version 330 core
+			
+			layout(location = 0) in vec3 a_Position;
+			layout(location = 1) in vec2 a_TexCoord;
+
+			uniform mat4 u_ViewProjection;
+			uniform mat4 u_Transform;
+
+			out vec2 v_TexCoord;
+
+			void main()
+			{
+				v_TexCoord = a_TexCoord;
+				gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);	
+			}
+		)";
+
+		std::string textureShaderFragmentSrc = R"(
+			#version 330 core
+			
+			layout(location = 0) out vec4 color;
+
+			in vec2 v_TexCoord;
+
+			uniform sampler2D u_Texture;
+
+			void main()
+			{
+				color = texture(u_Texture, v_TexCoord);
+			}
+		)";
+
+		m_TextureShader.reset(Evil::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
+
+		m_Texture = Evil::Texture2D::Create("assets/textures/Checkerboard.png");
+
+		std::dynamic_pointer_cast<Evil::OpenGLShader>(m_TextureShader)->Bind();
+		std::dynamic_pointer_cast<Evil::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
 	}
 
 	void OnUpdate(Evil::Timestep ts) override
@@ -173,7 +214,12 @@ public:
 			glm::mat4 transform = glm::translate(glm::mat4(1.0f),pos) * scale;
 			Evil::Renderer::Submit(m_FlatColorShader, m_SquareVA, transform);
 		}
-		Evil::Renderer::Submit(m_Shader, m_VertexArray);
+
+		m_Texture->Bind();
+		Evil::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+
+		//Triangle
+		//Evil::Renderer::Submit(m_Shader, m_VertexArray);
 
 		Evil::Renderer::EndScene();
 
@@ -195,8 +241,10 @@ private:
 	Evil::Ref<Evil::Shader> m_Shader;
 	Evil::Ref<Evil::VertexArray> m_VertexArray;
 
-	Evil::Ref<Evil::Shader> m_FlatColorShader;
+	Evil::Ref<Evil::Shader> m_FlatColorShader, m_TextureShader;
 	Evil::Ref<Evil::VertexArray> m_SquareVA;
+
+	Evil::Ref<Evil::Texture2D> m_Texture;
 
 	Evil::OrthographicCamera m_Camera;
 
