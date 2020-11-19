@@ -171,6 +171,7 @@ public:
 		m_TextureShader.reset(Evil::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
 
 		m_Texture = Evil::Texture2D::Create("assets/textures/Checkerboard.png");
+		m_ChernoLogoTexture = Evil::Texture2D::Create("assets/textures/ChernoLogo.png");
 
 		std::dynamic_pointer_cast<Evil::OpenGLShader>(m_TextureShader)->Bind();
 		std::dynamic_pointer_cast<Evil::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
@@ -218,6 +219,9 @@ public:
 		m_Texture->Bind();
 		Evil::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
+		m_ChernoLogoTexture->Bind();
+		Evil::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+
 		//Triangle
 		//Evil::Renderer::Submit(m_Shader, m_VertexArray);
 
@@ -244,7 +248,7 @@ private:
 	Evil::Ref<Evil::Shader> m_FlatColorShader, m_TextureShader;
 	Evil::Ref<Evil::VertexArray> m_SquareVA;
 
-	Evil::Ref<Evil::Texture2D> m_Texture;
+	Evil::Ref<Evil::Texture2D> m_Texture, m_ChernoLogoTexture;
 
 	Evil::OrthographicCamera m_Camera;
 
