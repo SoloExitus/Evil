@@ -12,7 +12,7 @@ class ExampleLayer : public Evil::Layer
 {
 public:
 	ExampleLayer()
-		: Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(0.0f)
+		: Layer("Example"), m_CameraController(1280.0f / 720.0f)
 	{
 
 		m_VertexArray.reset(Evil::VertexArray::Create());
@@ -138,7 +138,7 @@ public:
 		auto textureShader = m_ShaderLibrary.Load("assets/shaders/Texture.glsl");
 
 		m_Texture = Evil::Texture2D::Create("assets/textures/Checkerboard.png");
-		m_ChernoLogoTexture = Evil::Texture2D::Create("assets/textures/ChernoLogo.png");
+		m_CLogoTexture = Evil::Texture2D::Create("assets/textures/C++LOGO.png");
 
 		std::dynamic_pointer_cast<Evil::OpenGLShader>(textureShader)->Bind();
 		std::dynamic_pointer_cast<Evil::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
@@ -146,29 +146,14 @@ public:
 
 	void OnUpdate(Evil::Timestep ts) override
 	{
+		// Update
+		m_CameraController.OnUpdate(ts);
 
-		if (Evil::Input::IsKeyPressed(EVIL_KEY_LEFT))
-			m_CameraPosition.x -= m_CameraMoveSpeed * ts;
-		else if (Evil::Input::IsKeyPressed(EVIL_KEY_RIGHT))
-			m_CameraPosition.x += m_CameraMoveSpeed * ts;
-
-		if (Evil::Input::IsKeyPressed(EVIL_KEY_UP))
-			m_CameraPosition.y += m_CameraMoveSpeed * ts;
-		else if (Evil::Input::IsKeyPressed(EVIL_KEY_DOWN))
-			m_CameraPosition.y -= m_CameraMoveSpeed * ts;
-
-		if (Evil::Input::IsKeyPressed(EVIL_KEY_A))
-			m_CameraRotation += m_CameraRotationSpeed * ts;
-		else if (Evil::Input::IsKeyPressed(EVIL_KEY_D))
-			m_CameraRotation -= m_CameraRotationSpeed * ts;
-
+		// Render
 		Evil::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 0.1f });
 		Evil::RenderCommand::Clear();
 
-		m_Camera.SetPosition(m_CameraPosition);
-		m_Camera.SetRotation(m_CameraRotation);
-
-		Evil::Renderer::BeginScene(m_Camera);
+		Evil::Renderer::BeginScene(m_CameraController.GetCamera());
 
 		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
@@ -188,7 +173,7 @@ public:
 		m_Texture->Bind();
 		Evil::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
-		m_ChernoLogoTexture->Bind();
+		m_CLogoTexture->Bind();
 		Evil::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		//Triangle
@@ -205,9 +190,9 @@ public:
 		ImGui::End();
 	}
 
-	void OnEvent(Evil::Event& event) override
+	void OnEvent(Evil::Event& e) override
 	{
-
+		m_CameraController.OnEvent(e);
 	}
 
 private:
@@ -218,15 +203,9 @@ private:
 	Evil::Ref<Evil::Shader> m_FlatColorShader;
 	Evil::Ref<Evil::VertexArray> m_SquareVA;
 
-	Evil::Ref<Evil::Texture2D> m_Texture, m_ChernoLogoTexture;
+	Evil::Ref<Evil::Texture2D> m_Texture, m_CLogoTexture;
 
-	Evil::OrthographicCamera m_Camera;
-
-	glm::vec3 m_CameraPosition;
-	float m_CameraMoveSpeed = 5.0f;
-
-	float m_CameraRotation = 0.0f;
-	float m_CameraRotationSpeed = 180.0f;
+	Evil::OrthographicCameraController m_CameraController;
 
 	glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
 };
