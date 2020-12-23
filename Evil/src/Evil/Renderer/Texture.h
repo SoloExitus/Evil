@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "Evil/Core.h"
+#include "Evil/Core/Core.h"
 
 namespace Evil
 {

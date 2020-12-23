@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Evil/Window.h"
+#include "Evil/Core/Window.h"
 #include "Evil/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>

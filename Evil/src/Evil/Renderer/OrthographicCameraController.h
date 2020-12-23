@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Renderer/OrthographicCamera.h"
-#include "Core/Timestep.h"
+#include "Evil/Renderer/OrthographicCamera.h"
+#include "Evil/Core/Timestep.h"
 
-#include "Events/ApplicationEvent.h"
-#include "Events/MouseEvent.h"
+#include "Evil/Events/ApplicationEvent.h"
+#include "Evil/Events/MouseEvent.h"
 
 namespace Evil
 {

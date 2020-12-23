@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Evil/Input.h"
+#include "Evil/Core/Input.h"
 
 namespace Evil
 {

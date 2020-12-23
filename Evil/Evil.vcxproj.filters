@@ -1284,17 +1284,38 @@
     <ClInclude Include="src\Evil.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Evil\Application.h">
-      <Filter>src\Evil</Filter>
+    <ClInclude Include="src\Evil\Core\Application.h">
+      <Filter>src\Evil\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Evil\Core.h">
-      <Filter>src\Evil</Filter>
+    <ClInclude Include="src\Evil\Core\Core.h">
+      <Filter>src\Evil\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Core\EntryPoint.h">
+      <Filter>src\Evil\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Core\Input.h">
+      <Filter>src\Evil\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Core\KeyCodes.h">
+      <Filter>src\Evil\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Core\Layer.h">
+      <Filter>src\Evil\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Core\LayerStack.h">
+      <Filter>src\Evil\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Core\Log.h">
+      <Filter>src\Evil\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Core\MouseButtonCodes.h">
+      <Filter>src\Evil\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Evil\Core\Timestep.h">
       <Filter>src\Evil\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Evil\EntryPoint.h">
-      <Filter>src\Evil</Filter>
+    <ClInclude Include="src\Evil\Core\Window.h">
+      <Filter>src\Evil\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Evil\Events\ApplicationEvent.h">
       <Filter>src\Evil\Events</Filter>
@@ -1310,24 +1331,6 @@
     </ClInclude>
     <ClInclude Include="src\Evil\ImGui\ImGuiLayer.h">
       <Filter>src\Evil\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Evil\Input.h">
-      <Filter>src\Evil</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Evil\KeyCodes.h">
-      <Filter>src\Evil</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Evil\Layer.h">
-      <Filter>src\Evil</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Evil\LayerStack.h">
-      <Filter>src\Evil</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Evil\Log.h">
-      <Filter>src\Evil</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Evil\MouseButtonCodes.h">
-      <Filter>src\Evil</Filter>
     </ClInclude>
     <ClInclude Include="src\Evil\Platform\OpenGL\OpenGLBuffer.h">
       <Filter>src\Evil\Platform\OpenGL</Filter>
@@ -1362,6 +1365,9 @@
     <ClInclude Include="src\Evil\Renderer\OrthographicCamera.h">
       <Filter>src\Evil\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\Evil\Renderer\OrthographicCameraController.h">
+      <Filter>src\Evil\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Evil\Renderer\RenderCommand.h">
       <Filter>src\Evil\Renderer</Filter>
     </ClInclude>
@@ -1380,35 +1386,31 @@
     <ClInclude Include="src\Evil\Renderer\VertexArray.h">
       <Filter>src\Evil\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\Evil\Window.h">
-      <Filter>src\Evil</Filter>
-    </ClInclude>
     <ClInclude Include="src\evilpch.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Evil\OrthographicCameraController.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vendor\stb_image\stb_image.cpp">
       <Filter>Vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\Evil\Application.cpp">
-      <Filter>src\Evil</Filter>
+    <ClCompile Include="src\Evil\Core\Application.cpp">
+      <Filter>src\Evil\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Evil\Core\Layer.cpp">
+      <Filter>src\Evil\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Evil\Core\LayerStack.cpp">
+      <Filter>src\Evil\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Evil\Core\Log.cpp">
+      <Filter>src\Evil\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Evil\ImGui\ImGuiBuild.cpp">
       <Filter>src\Evil\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Evil\ImGui\ImGuiLayer.cpp">
       <Filter>src\Evil\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Evil\Layer.cpp">
-      <Filter>src\Evil</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Evil\LayerStack.cpp">
-      <Filter>src\Evil</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Evil\Log.cpp">
-      <Filter>src\Evil</Filter>
     </ClCompile>
     <ClCompile Include="src\Evil\Platform\OpenGL\OpenGLBuffer.cpp">
       <Filter>src\Evil\Platform\OpenGL</Filter>
@@ -1440,6 +1442,9 @@
     <ClCompile Include="src\Evil\Renderer\OrthographicCamera.cpp">
       <Filter>src\Evil\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\Evil\Renderer\OrthographicCameraController.cpp">
+      <Filter>src\Evil\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\Evil\Renderer\RenderCommand.cpp">
       <Filter>src\Evil\Renderer</Filter>
     </ClCompile>
@@ -1461,6 +1466,5 @@
     <ClCompile Include="src\evilpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Evil\OrthographicCameraController.cpp" />
   </ItemGroup>
 </Project>

@@ -1,8 +1,8 @@
 #include "evilpch.h"
 #include "OrthographicCameraController.h"
 
-#include "Input.h"
-#include "KeyCodes.h"
+#include "Evil/Core/Input.h"
+#include "Evil/Core/KeyCodes.h"
 
 namespace Evil
 {

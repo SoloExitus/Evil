@@ -1,7 +1,7 @@
 #include "evilpch.h"
 #include "WindowsInput.h"
 
-#include "Evil/Application.h"
+#include "Evil/Core/Application.h"
 #include "GLFW/glfw3.h"
 
 namespace Evil
