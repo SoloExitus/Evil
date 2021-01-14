@@ -25,8 +25,3 @@
 
 #include "Evil/Renderer/OrthographicCamera.h"
 #include "Evil/Renderer/OrthographicCameraController.h"
-// -------------------------------------------
-
-// ---Entry Point ------------------------
-#include "Evil/Core/EntryPoint.h"
-// ---------------------------------------

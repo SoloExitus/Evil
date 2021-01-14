@@ -1,12 +1,16 @@
 [submodule "Evil/Vendor/spdlog"]
 	path = Evil/Vendor/spdlog
 	url = https://github.com/gabime/spdlog
+	branch = v1.x
 [submodule "Evil/Vendor/GLFW"]
 	path = Evil/Vendor/GLFW
 	url = https://github.com/TheCherno/glfw
+	branch = master
 [submodule "Evil/Vendor/imgui"]
 	path = Evil/Vendor/imgui
 	url = https://github.com/TheCherno/imgui
+	branch = docking
 [submodule "Evil/Vendor/glm"]
 	path = Evil/Vendor/glm
 	url = https://github.com/g-truc/glm
+	branch = master

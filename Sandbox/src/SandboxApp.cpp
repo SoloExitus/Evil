@@ -1,5 +1,5 @@
-
 #include <Evil.h>
+#include <Evil/Core/EntryPoint.h>
 
 #include "Evil/Platform/OpenGL/OpenGLShader.h"
 
@@ -8,14 +8,16 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include "SandBox2D.h"
+
 class ExampleLayer : public Evil::Layer
 {
 public:
 	ExampleLayer()
-		: Layer("Example"), m_CameraController(1280.0f / 720.0f)
+		: Layer("Example"), m_CameraController(1280.0f / 720.0f, true)
 	{
 
-		m_VertexArray.reset(Evil::VertexArray::Create());
+		m_VertexArray = Evil::VertexArray::Create();
 
 		float vertices[3 * 7] =
 		{
@@ -39,7 +41,7 @@ public:
 		indexBuffer.reset(Evil::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
-		m_SquareVA.reset(Evil::VertexArray::Create());
+		m_SquareVA = Evil::VertexArray::Create();
 
 		float squareVertices[5 * 4] =
 		{
@@ -215,7 +217,8 @@ class SandBox : public Evil::Application
 public:
 	SandBox()
 	{
-		PushLayer(new ExampleLayer());
+		//PushLayer(new ExampleLayer());
+		PushLayer(new SandBox2D());
 	}
 	~SandBox()
 	{
