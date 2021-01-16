@@ -56,13 +56,15 @@ void SandBox2D::OnUpdate(Evil::Timestep ts)
 	Evil::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 0.1f });
 	Evil::RenderCommand::Clear();
 
-	Evil::Renderer::BeginScene(m_CameraController.GetCamera());
+	Evil::Renderer2D::BeginScene(m_CameraController.GetCamera());
 
-	std::dynamic_pointer_cast<Evil::OpenGLShader>(m_FlatColorShader)->Bind();
-	std::dynamic_pointer_cast<Evil::OpenGLShader>(m_FlatColorShader)->UploadUniformFloat4("u_Color", m_SquareColor);
-	Evil::Renderer::Submit(m_FlatColorShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+	Evil::Renderer2D::DrawQuad({ 0.0f, 0.0f }, { 1.0f, 1.0f }, { 0.8f, 0.2f, 0.3f, 1.0f });
+	Evil::Renderer2D::EndScene();
 
-	Evil::Renderer::EndScene();
+	//// TODO: Add functions: Shader::SetMat4 , Shader::SetFloat4
+	//std::dynamic_pointer_cast<Evil::OpenGLShader>(m_FlatColorShader)->Bind();
+	//std::dynamic_pointer_cast<Evil::OpenGLShader>(m_FlatColorShader)->UploadUniformFloat4("u_Color", m_SquareColor);
+	//Evil::Renderer::Submit(m_FlatColorShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 }
 
 void SandBox2D::OnImGuiRender()

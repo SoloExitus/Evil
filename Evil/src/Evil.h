@@ -16,6 +16,7 @@
 
 // ---Renderer -------------------------------
 #include "Evil/Renderer/Renderer.h"
+#include "Evil/Renderer/Renderer2D.h"
 #include "Evil/Renderer/RenderCommand.h"
 
 #include "Evil/Renderer/Buffer.h"
