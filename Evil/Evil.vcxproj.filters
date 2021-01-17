@@ -1389,6 +1389,7 @@
     <ClInclude Include="src\evilpch.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\Evil\Renderer\Renderer2D.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vendor\stb_image\stb_image.cpp">
@@ -1466,5 +1467,6 @@
     <ClCompile Include="src\evilpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Evil\Renderer\Renderer2D.cpp" />
   </ItemGroup>
 </Project>

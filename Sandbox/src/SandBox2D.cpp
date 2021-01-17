@@ -14,32 +14,7 @@ SandBox2D::SandBox2D()
 
 void SandBox2D::OnAttach()
 {
-	m_SquareVA = Evil::VertexArray::Create();
-
-	float squareVertices[5 * 4] =
-	{
-		-0.5f, -0.5f, 0.0f,
-		 0.5f, -0.5f, 0.0f,
-		 0.5f,  0.5f, 0.0f,
-		-0.5f,  0.5f, 0.0f
-	};
-
-	Evil::Ref<Evil::VertexBuffer> squareVB;
-	squareVB.reset(Evil::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
-
-	squareVB->SetLayout({
-		{ Evil::ShaderDataType::Float3, "a_Position" },
-	});
-
-	m_SquareVA->AddVertexBuffer(squareVB);
-
-	uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-	Evil::Ref<Evil::IndexBuffer> squareIB;
-
-	squareIB.reset(Evil::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
-	m_SquareVA->SetIndexBuffer(squareIB);
-
-	m_FlatColorShader = Evil::Shader::Create("assets/shaders/FlatColor.glsl");
+	
 }
 
 void SandBox2D::OnDetach()
