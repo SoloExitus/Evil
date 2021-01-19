@@ -4,8 +4,6 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include "Evil/Platform/OpenGL/OpenGLShader.h"
-
 SandBox2D::SandBox2D()
 	:Layer("Sandbox2D"), m_CameraController(1280.0f / 720.0f, true)
 {
@@ -14,7 +12,7 @@ SandBox2D::SandBox2D()
 
 void SandBox2D::OnAttach()
 {
-	
+	m_CheckerboardTexture = Evil::Texture2D::Create("assets/textures/Checkerboard.png");
 }
 
 void SandBox2D::OnDetach()
@@ -33,13 +31,10 @@ void SandBox2D::OnUpdate(Evil::Timestep ts)
 
 	Evil::Renderer2D::BeginScene(m_CameraController.GetCamera());
 
-	Evil::Renderer2D::DrawQuad({ 0.0f, 0.0f }, { 1.0f, 1.0f }, { 0.8f, 0.2f, 0.3f, 1.0f });
+	Evil::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.8f, 0.8f }, { 0.8f, 0.2f, 0.3f, 1.0f });
+	Evil::Renderer2D::DrawQuad({ 0.5f, -0.5f }, { 0.5f, 0.75f }, { 0.2f, 0.3f, 0.8f, 1.0f });
+	Evil::Renderer2D::DrawQuad({ 0.0f, 0.0f, -0.1f }, { 10.0f, 10.0f }, m_CheckerboardTexture);
 	Evil::Renderer2D::EndScene();
-
-	//// TODO: Add functions: Shader::SetMat4 , Shader::SetFloat4
-	//std::dynamic_pointer_cast<Evil::OpenGLShader>(m_FlatColorShader)->Bind();
-	//std::dynamic_pointer_cast<Evil::OpenGLShader>(m_FlatColorShader)->UploadUniformFloat4("u_Color", m_SquareColor);
-	//Evil::Renderer::Submit(m_FlatColorShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 }
 
 void SandBox2D::OnImGuiRender()
