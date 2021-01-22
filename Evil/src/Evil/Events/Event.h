@@ -1,5 +1,6 @@
 #pragma once
 #include "evilpch.h"
+
 #include "Evil/Core/Core.h"
 
 namespace Evil
@@ -34,7 +35,7 @@ namespace Evil
 
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
-	class EVIL_API Event
+	class Event
 	{
 	public:
 		bool Handled = false;

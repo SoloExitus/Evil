@@ -1,7 +1,8 @@
 #pragma once
 
-#include "OrthographicCamera.h"
-#include "Texture.h"
+#include "Evil/Renderer/OrthographicCamera.h"
+
+#include "Evil/Renderer/Texture.h"
 
 namespace Evil
 {

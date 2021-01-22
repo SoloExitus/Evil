@@ -1,9 +1,9 @@
 #include "evilpch.h"
-#include "Application.h"
+#include "Evil/Core/Application.h"
 
 #include "Evil/Renderer/Renderer.h"
 
-#include "Input.h"
+#include "Evil/Core/Input.h"
 
 #include <GLFW/glfw3.h>
 
@@ -18,13 +18,18 @@ namespace Evil
 		EVIL_CORE_ASSERT(!s_Instance, "Application already exists!");
 		s_Instance = this;
 
-		m_Window = std::unique_ptr<Window>(Window::Create());
-		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+		m_Window = Window::Create();
+		m_Window->SetEventCallback(BIND_EVENT_FN(Application:: OnEvent));
 
 		Renderer::Init();
 
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
+	}
+
+	Application::~Application()
+	{
+		Renderer::Shutdown();
 	}
 
 	void Application::PushLayer(Layer* layer) 
@@ -40,8 +45,8 @@ namespace Evil
 	void Application::OnEvent(Event& e)
 	{
 		EventDispatcher dispatcher(e);
-		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
-		dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(OnWindowResize));
+		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::OnWindowClose));
+		dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(Application::OnWindowResize));
 
 		auto itBegin = m_LayerStack.begin();
 

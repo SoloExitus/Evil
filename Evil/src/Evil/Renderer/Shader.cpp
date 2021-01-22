@@ -1,7 +1,7 @@
 #include "evilpch.h"
-#include "Shader.h"
+#include "Evil/Renderer/Shader.h"
 
-#include "Renderer.h"
+#include "Evil/Renderer/Renderer.h"
 #include "Evil/Platform/OpenGL/OpenGLShader.h"
 
 namespace Evil
@@ -11,7 +11,7 @@ namespace Evil
 		switch (Renderer::GetAPI())
 		{
 			case RendererAPI::API::None:		EVIL_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-			case RendererAPI::API::OpenGL:		return std::make_shared<OpenGLShader>(filepath);
+			case RendererAPI::API::OpenGL:		return CreateRef<OpenGLShader>(filepath);
 
 
 		}
@@ -25,7 +25,7 @@ namespace Evil
 		switch (Renderer::GetAPI())
 		{
 			case RendererAPI::API::None:		EVIL_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-			case RendererAPI::API::OpenGL:		return std::make_shared<OpenGLShader>(name, vertexSrc, fragmentSrc);
+			case RendererAPI::API::OpenGL:		return CreateRef<OpenGLShader>(name, vertexSrc, fragmentSrc);
 
 
 		}

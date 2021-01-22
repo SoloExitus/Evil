@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Evil/Core/Core.h"
+
 #ifdef EVIL_PLATFORM_WINDOWS
 
 extern Evil::Application* Evil::CreateApplication();

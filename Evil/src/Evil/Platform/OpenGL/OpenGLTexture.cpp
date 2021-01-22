@@ -1,7 +1,7 @@
 #include "evilpch.h"
-#include "OpenGLTexture.h"
+#include "Evil/Platform/OpenGL/OpenGLTexture.h"
 
-#include "stb_image.h"
+#include <stb_image.h>
 
 namespace Evil
 {

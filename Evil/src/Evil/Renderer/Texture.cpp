@@ -1,7 +1,7 @@
 #include "evilpch.h"
-#include "Texture.h"
+#include "Evil/Renderer/Texture.h"
 
-#include "Renderer.h"
+#include "Evil/Renderer/Renderer.h"
 #include "Evil/Platform/OpenGL/OpenGLTexture.h"
 
 namespace Evil

@@ -1,11 +1,8 @@
 #include "evilpch.h"
-#include "LayerStack.h"
+#include "Evil/Core/LayerStack.h"
 
 namespace Evil
 {
-	LayerStack::LayerStack()
-	{
-	}
 
 	LayerStack::~LayerStack()
 	{

@@ -4,7 +4,7 @@
 
 namespace Evil
 {
-	class EVIL_API Input
+	class Input
 	{
 	protected:
 		Input() = default;

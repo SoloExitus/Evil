@@ -1,7 +1,7 @@
 #include "evilpch.h"
-#include "VertexArray.h"
+#include "Evil/Renderer/VertexArray.h"
 
-#include "Renderer.h"
+#include "Evil/Renderer/Renderer.h"
 #include "Evil/Platform/OpenGL/OpenGLVertexArray.h"
 
 namespace Evil

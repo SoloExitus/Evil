@@ -1,18 +1,18 @@
 #include "evilpch.h"
-#include "Buffer.h"
+#include "Evil/Renderer/Buffer.h"
 
-#include "Renderer.h"
+#include "Evil/Renderer/Renderer.h"
 
 #include "Evil/Platform/OpenGL/OpenGLBuffer.h"
 
 namespace Evil
 {
-	VertexBuffer* VertexBuffer::Create(float* vertices, uint32_t size)
+	Ref<VertexBuffer> VertexBuffer::Create(float* vertices, uint32_t size)
 	{
 		switch (Renderer::GetAPI()) 
 		{
 			case RendererAPI::API::None:		EVIL_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-			case RendererAPI::API::OpenGL:		return new OpenGLVertexBuffer(vertices, size);
+			case RendererAPI::API::OpenGL:		return CreateRef<OpenGLVertexBuffer>(vertices, size);
 
 
 		}
@@ -21,12 +21,12 @@ namespace Evil
 		return nullptr;
 	}
 
-	IndexBuffer* IndexBuffer::Create(uint32_t* indices, uint32_t size)
+	Ref<IndexBuffer> IndexBuffer::Create(uint32_t* indices, uint32_t size)
 	{
 		switch (Renderer::GetAPI())
 		{
 			case RendererAPI::API::None:		EVIL_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-			case RendererAPI::API::OpenGL:	return new OpenGLIndexBuffer(indices, size);
+			case RendererAPI::API::OpenGL:	return CreateRef<OpenGLIndexBuffer>(indices, size);
 
 
 		}

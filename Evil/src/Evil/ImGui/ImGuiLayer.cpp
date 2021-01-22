@@ -1,9 +1,9 @@
 #include "evilpch.h"
-#include "ImGUiLayer.h"
+#include "Evil/ImGui/ImGuiLayer.h"
 
-#include "imgui.h"
-#include "examples/imgui_impl_glfw.h"
-#include "examples/imgui_impl_opengl3.h"
+#include <imgui.h>
+#include <examples/imgui_impl_glfw.h>
+#include <examples/imgui_impl_opengl3.h>
 
 #include "Evil/Core/Application.h"
 

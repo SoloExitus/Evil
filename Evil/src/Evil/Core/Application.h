@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Core.h"
+#include "Evil/Core/Core.h"
 
-#include "Window.h"
+#include "Evil/Core/Window.h"
 #include "Evil/Core/LayerStack.h"
 #include "Evil/Events/Event.h"
 #include "Evil/Events/ApplicationEvent.h"
@@ -17,7 +17,7 @@ namespace Evil
 	{
 	public:
 		Application();
-		virtual ~Application() = default;
+		virtual ~Application();
 
 		void Run();
 

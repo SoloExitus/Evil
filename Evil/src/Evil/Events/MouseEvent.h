@@ -4,7 +4,7 @@
 
 namespace Evil
 {
-	class EVIL_API MouseMovedEvent : public Event
+	class MouseMovedEvent : public Event
 	{
 	public:
 		MouseMovedEvent(const float x, const float y)
@@ -26,7 +26,7 @@ namespace Evil
 		float m_MouseX, m_MouseY;
 	};
 
-	class EVIL_API MouseScrolledEvent : public Event
+	class MouseScrolledEvent : public Event
 	{
 	public:
 		MouseScrolledEvent(const float xOffset, const float yOffset)
@@ -48,7 +48,7 @@ namespace Evil
 		float m_XOffset, m_YOffset;
 	};
 
-	class EVIL_API MouseButtonEvent : public Event
+	class MouseButtonEvent : public Event
 	{
 	public:
 		inline int GetMouseButton() const { return m_Button; }
@@ -61,7 +61,7 @@ namespace Evil
 		int m_Button;
 	};
 
-	class EVIL_API MouseButtonPressedEvent : public MouseButtonEvent
+	class MouseButtonPressedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonPressedEvent(int button)
@@ -77,7 +77,7 @@ namespace Evil
 		EVENT_CLASS_TYPE(MouseButtonPressed)
 	};
 
-	class EVIL_API MouseButtonReleasedEvent : public MouseButtonEvent
+	class MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonReleasedEvent(int button)

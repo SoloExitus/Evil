@@ -1468,5 +1468,6 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\Evil\Renderer\Renderer2D.cpp" />
+    <ClCompile Include="src\Evil\Renderer\GraphicsContext.cpp" />
   </ItemGroup>
 </Project>

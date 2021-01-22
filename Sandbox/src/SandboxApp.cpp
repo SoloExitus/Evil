@@ -1,9 +1,7 @@
 #include <Evil.h>
 #include <Evil/Core/EntryPoint.h>
 
-#include "Evil/Platform/OpenGL/OpenGLShader.h"
-
-#include "imgui/imgui.h"
+#include <imgui/imgui.h>
 
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -26,8 +24,7 @@ public:
 			 0.0f,  0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f
 		};
 
-		Evil::Ref<Evil::VertexBuffer> vertexBuffer;
-		vertexBuffer.reset(Evil::VertexBuffer::Create(vertices, sizeof(vertices)));
+		Evil::Ref<Evil::VertexBuffer> vertexBuffer = Evil::VertexBuffer::Create(vertices, sizeof(vertices));
 		Evil::BufferLayout layout = {
 			{ Evil::ShaderDataType::Float3, "a_Position" },
 			{ Evil::ShaderDataType::Float4, "a_Color" }
@@ -37,8 +34,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t indices[3] = { 0, 1, 2 };
-		Evil::Ref<Evil::IndexBuffer> indexBuffer;
-		indexBuffer.reset(Evil::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+		Evil::Ref<Evil::IndexBuffer> indexBuffer = Evil::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
 		m_SquareVA = Evil::VertexArray::Create();
@@ -51,8 +47,7 @@ public:
 			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
 
-		Evil::Ref<Evil::VertexBuffer> squareVB;
-		squareVB.reset(Evil::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
+		Evil::Ref<Evil::VertexBuffer> squareVB = Evil::VertexBuffer::Create(squareVertices, sizeof(squareVertices));
 
 		squareVB->SetLayout({
 			{ Evil::ShaderDataType::Float3, "a_Position" },
@@ -62,8 +57,7 @@ public:
 		m_SquareVA->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		Evil::Ref<Evil::IndexBuffer> squareIB;
-		squareIB.reset(Evil::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
+		Evil::Ref<Evil::IndexBuffer> squareIB = Evil::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
 		std::string vertexSrc = R"(
@@ -141,9 +135,9 @@ public:
 
 		m_Texture = Evil::Texture2D::Create("assets/textures/Checkerboard.png");
 		m_CLogoTexture = Evil::Texture2D::Create("assets/textures/C++LOGO.png");
-
-		std::dynamic_pointer_cast<Evil::OpenGLShader>(textureShader)->Bind();
-		std::dynamic_pointer_cast<Evil::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
+		
+		textureShader->Bind();
+		textureShader->SetInt("u_Texture", 0);
 	}
 
 	void OnUpdate(Evil::Timestep ts) override
@@ -159,8 +153,8 @@ public:
 
 		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
-		std::dynamic_pointer_cast<Evil::OpenGLShader>(m_FlatColorShader)->Bind();
-		std::dynamic_pointer_cast<Evil::OpenGLShader>(m_FlatColorShader)->UploadUniformFloat3("u_Color", m_SquareColor);
+		m_FlatColorShader->Bind();
+		m_FlatColorShader->SetFloat3("u_Color", m_SquareColor);
 
 		for (int y = 0; y < 20; y++) 
 			for(int x=0;x < 20; x++)

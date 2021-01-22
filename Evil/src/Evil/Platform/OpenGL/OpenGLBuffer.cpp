@@ -1,5 +1,5 @@
 #include "evilpch.h"
-#include "OpenGLBuffer.h"
+#include "Evil/Platform/OpenGL/OpenGLBuffer.h"
 
 #include <glad/glad.h>
 

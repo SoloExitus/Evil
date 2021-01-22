@@ -43,22 +43,6 @@
 		#error "Unknown platform!"
 #endif // End of platform detection
 
-
-// DLL support
-#ifdef EVIL_PLATFORM_WINDOWS
-		#if EVIL_DYNAMIC_LINK
-				#ifdef EVIL_BUILD_DLL
-					#define EVIL_API __declspec(dllexport)
-				#else
-					#define EVIL_API __declspec(dllimport)
-				#endif
-		#else
-			#define EVIL_API
-		#endif
-#else
-#error EVil only supports Windows!
-#endif // End of DLL support
-
 #ifdef EVIL_DEBUG
 	#define EVIL_ENABLE_ASSERTS
 #endif // EVIL_DEBUG

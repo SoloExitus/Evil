@@ -1,9 +1,9 @@
 #pragma once
 
-#include "RenderCommand.h"
+#include "Evil/Renderer/RenderCommand.h"
 
-#include "OrthographicCamera.h"
-#include "Shader.h"
+#include "Evil/Renderer/OrthographicCamera.h"
+#include "Evil/Renderer/Shader.h"
 
 namespace Evil
 {
@@ -11,6 +11,8 @@ namespace Evil
 	{
 	public:
 		static void Init();
+		static void Shutdown();
+
 		static void OnWindowResize(uint32_t width, uint32_t height);
 
 		static void  BeginScene(OrthographicCamera& camera); 

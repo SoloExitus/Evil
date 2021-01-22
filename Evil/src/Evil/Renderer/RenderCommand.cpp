@@ -1,9 +1,7 @@
 #include "evilpch.h"
-#include "RenderCommand.h"
-
-#include "Evil/Platform/OpenGL/OpenGLRendererAPI.h"
+#include "Evil/Renderer/RenderCommand.h"
 
 namespace Evil
 {
-	Scope<RendererAPI> RenderCommand::s_RendererAPI = CreateScope<OpenGLRendererAPI>();
+	Scope<RendererAPI> RenderCommand::s_RendererAPI = RendererAPI::Create();
 }

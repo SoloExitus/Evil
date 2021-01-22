@@ -2,7 +2,8 @@
 
 //For use by Evil applications
 
-#include "Evil/Core/Timestep.h"
+#include "Evil/Core/Core.h"
+
 #include "Evil/Core/Application.h"
 #include "Evil/Core/Layer.h"
 #include "Evil/Core/Log.h"

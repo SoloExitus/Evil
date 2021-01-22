@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Event.h"
+#include "Evil/Events/Event.h"
 
 namespace Evil
 {
-	class EVIL_API KeyEvent : public Event
+	class KeyEvent : public Event
 	{
 	public:
 		inline int GetKeyCode() const { return m_KeyCode; }
@@ -17,7 +17,7 @@ namespace Evil
 		int m_KeyCode;
 	};
 
-	class EVIL_API KeyPressedEvent : public KeyEvent
+	class KeyPressedEvent : public KeyEvent
 	{
 	public:
 		KeyPressedEvent(int keycode, int repeatcount)
@@ -38,7 +38,7 @@ namespace Evil
 	};
 
 
-	class EVIL_API KeyReleasedEvent : public KeyEvent
+	class KeyReleasedEvent : public KeyEvent
 	{
 	public:
 		KeyReleasedEvent(int keycode)
@@ -54,7 +54,7 @@ namespace Evil
 		EVENT_CLASS_TYPE(KeyReleased)
 	};
 
-	class EVIL_API KeyTypedEvent : public KeyEvent
+	class KeyTypedEvent : public KeyEvent
 	{
 	public:
 		KeyTypedEvent(int keycode)

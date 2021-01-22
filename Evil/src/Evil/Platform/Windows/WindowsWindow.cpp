@@ -1,13 +1,11 @@
 #include "evilpch.h"
-#include "WindowsWindow.h"
+#include "Evil/Platform/Windows/WindowsWindow.h"
 
 #include "Evil/Events/ApplicationEvent.h"
 #include "Evil/Events/KeyEvent.h"
 #include "Evil/Events/MouseEvent.h"
 
 #include "Evil/Platform/OpenGL/OpenGLContext.h"
-
-#include <glad/glad.h>
 
 namespace Evil
 {
@@ -18,9 +16,9 @@ namespace Evil
 		EVIL_CORE_ERROR("GLFW Error ({0}): {1}", error, description);
 	}
 
-	Window* Window::Create(const WindowProps& props)
+	Scope<Window> Window::Create(const WindowProps& props)
 	{
-		return new WindowsWindow(props);
+		return CreateScope<WindowsWindow>(props);
 	}
 
 	WindowsWindow::WindowsWindow(const WindowProps& props)
@@ -44,7 +42,6 @@ namespace Evil
 
 		if (s_GLFWWindowCount == 0)
 		{
-			EVIL_CORE_INFO("Initializing GLFW");
 			int success = glfwInit();
 			EVIL_CORE_ASSERT(success, "Could not initialize GLFW!");
 			glfwSetErrorCallback(GLFWErrorCallback);
@@ -53,7 +50,8 @@ namespace Evil
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		++s_GLFWWindowCount;
 
-		m_Context = CreateScope<OpenGLContext>(m_Window);
+		m_Context = OpenGLContext::Create(m_Window);
+
 		m_Context->Init();
 
 		glfwSetWindowUserPointer(m_Window, &m_Data);
@@ -161,11 +159,10 @@ namespace Evil
 	void WindowsWindow::Shutdown()
 	{
 		glfwDestroyWindow(m_Window);
-		s_GLFWWindowCount -= 1;
+		--s_GLFWWindowCount;
 
 		if(s_GLFWWindowCount == 0)
 		{
-			EVIL_CORE_INFO("Terminating GLFW");
 			glfwTerminate();
 		}
 	}
