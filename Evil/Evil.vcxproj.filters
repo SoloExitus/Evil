@@ -1390,6 +1390,7 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\Evil\Renderer\Renderer2D.h" />
+    <ClInclude Include="src\Evil\Debug\Instrumentor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vendor\stb_image\stb_image.cpp">

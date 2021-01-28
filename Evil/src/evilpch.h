@@ -16,6 +16,8 @@
 
 #include "Evil/Core/Log.h"
 
+#include "Evil/Debug/Instrumentor.h"
+
 #ifdef EVIL_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif
