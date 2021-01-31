@@ -12,22 +12,22 @@ SandBox2D::SandBox2D()
 
 void SandBox2D::OnAttach()
 {
+	EVIL_PROFILE_FUNCTION();
+
 	m_CheckerboardTexture = Evil::Texture2D::Create("assets/textures/Checkerboard.png");
 }
 
 void SandBox2D::OnDetach()
 {
+	EVIL_PROFILE_FUNCTION();
 }
 
 void SandBox2D::OnUpdate(Evil::Timestep ts)
 {
-	EVIL_PROFILE_FUNCTION()
+	EVIL_PROFILE_FUNCTION();
 
 	// Update
-	{
-		EVIL_PROFILE_SCOPE("CameraController::OnUpdate");
-		m_CameraController.OnUpdate(ts);
-	}
+	m_CameraController.OnUpdate(ts);
 
 	// Render
 	{
