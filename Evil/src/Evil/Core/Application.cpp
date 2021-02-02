@@ -60,11 +60,11 @@ namespace Evil
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::OnWindowClose));
 		dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(Application::OnWindowResize));
 
-		auto itBegin = m_LayerStack.begin();
+		auto reverseEnd = m_LayerStack.rend();
 
-		for (auto it = m_LayerStack.end(); it != itBegin;)
+		for (auto it = m_LayerStack.rbegin(); it != reverseEnd; ++it)
 		{
-			(*--it)->OnEvent(e);
+			(*it)->OnEvent(e);
 			if (e.Handled)
 				break;
 		}
