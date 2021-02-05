@@ -10,7 +10,7 @@
 
 #include "Evil/Core/Input.h"
 #include "Evil/Core/KeyCodes.h"
-#include "Evil/Core/MouseButtonCodes.h"
+#include "Evil/Core/MouseCodes.h"
 
 #include "Evil/ImGui/ImGuiLayer.h"
 

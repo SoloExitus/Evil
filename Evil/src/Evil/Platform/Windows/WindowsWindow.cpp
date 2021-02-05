@@ -1,9 +1,13 @@
 #include "evilpch.h"
 #include "Evil/Platform/Windows/WindowsWindow.h"
 
+#include "Evil/Core/Input.h"
+
 #include "Evil/Events/ApplicationEvent.h"
 #include "Evil/Events/KeyEvent.h"
 #include "Evil/Events/MouseEvent.h"
+
+#include "Evil/Renderer/Renderer.h"
 
 #include "Evil/Platform/OpenGL/OpenGLContext.h"
 
@@ -56,6 +60,10 @@ namespace Evil
 
 		{
 			EVIL_PROFILE_SCOPE("glfwCreateWindow");
+			#if defined(EVIL_DEBUG)
+				if (Renderer::GetAPI() == RendererAPI::API::OpenGL)
+					glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GLFW_TRUE);
+			#endif
 			m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 			++s_GLFWWindowCount;
 		}
@@ -92,23 +100,25 @@ namespace Evil
 			{
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
+				KeyCode keycode = static_cast<KeyCode>(key);
+
 				switch (action)
 				{
 					case GLFW_PRESS:
 					{
-						KeyPressedEvent event(key, 0);
+						KeyPressedEvent event(keycode, 0);
 						data.EventCallback(event);
 						break;
 					}
 					case GLFW_RELEASE:
 					{
-						KeyReleasedEvent event(key);
+						KeyReleasedEvent event(keycode);
 						data.EventCallback(event);
 						break;
 					}
 					case GLFW_REPEAT:
 					{
-						KeyPressedEvent event(key, 0);
+						KeyPressedEvent event(keycode, 0);
 						data.EventCallback(event);
 						break;
 					}
@@ -119,26 +129,28 @@ namespace Evil
 		glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int keycode)
 			{
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
-				KeyTypedEvent event(keycode);
+				KeyTypedEvent event(static_cast<KeyCode>(keycode));
 				data.EventCallback(event);
 			}
 		);
 
-		glfwSetMouseButtonCallback(m_Window, [] (GLFWwindow* window, int key, int action, int mods)
+		glfwSetMouseButtonCallback(m_Window, [] (GLFWwindow* window, int button, int action, int mods)
 			{
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+				MouseCode buttoncode = static_cast<MouseCode>(button);
 
 				switch (action)
 				{
 					case GLFW_PRESS:
 					{
-						MouseButtonPressedEvent event(key);
+						MouseButtonPressedEvent event(buttoncode);
 						data.EventCallback(event);
 						break;
 					}
 					case GLFW_RELEASE:
 					{
-						MouseButtonReleasedEvent event(key);
+						MouseButtonReleasedEvent event(buttoncode);
 						data.EventCallback(event);
 						break;
 					}
