@@ -593,6 +593,8 @@
     <ClInclude Include="src\evilpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Evil\Core\Input.cpp" />
+    <ClCompile Include="src\Evil\Core\Window.cpp" />
     <ClCompile Include="src\Evil\Renderer\GraphicsContext.cpp" />
     <ClCompile Include="src\Evil\Renderer\Renderer2D.cpp" />
     <ClCompile Include="Vendor\stb_image\stb_image.cpp" />

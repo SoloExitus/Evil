@@ -1470,5 +1470,7 @@
     </ClCompile>
     <ClCompile Include="src\Evil\Renderer\Renderer2D.cpp" />
     <ClCompile Include="src\Evil\Renderer\GraphicsContext.cpp" />
+    <ClCompile Include="src\Evil\Core\Input.cpp" />
+    <ClCompile Include="src\Evil\Core\Window.cpp" />
   </ItemGroup>
 </Project>
