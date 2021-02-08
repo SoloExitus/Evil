@@ -169,7 +169,7 @@ namespace Evil {
 	};
 }
 
-#define EVIL_PROFILE 1
+#define EVIL_PROFILE 0
 
 #if EVIL_PROFILE
 
