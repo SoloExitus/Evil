@@ -34,6 +34,9 @@
     <Filter Include="src\Evil\Core">
       <UniqueIdentifier>{E4B4C20F-5075-3E46-19B0-87C3852F8322}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Evil\Debug">
+      <UniqueIdentifier>{82AC2508-6E7A-190E-570E-8A34437BF572}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Evil\Events">
       <UniqueIdentifier>{708F6510-DC1A-D3D4-E52B-56C951362FD5}</UniqueIdentifier>
     </Filter>
@@ -1308,11 +1311,17 @@
     <ClInclude Include="src\Evil\Core\Log.h">
       <Filter>src\Evil\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Evil\Core\MouseCodes.h">
+      <Filter>src\Evil\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\Evil\Core\Timestep.h">
       <Filter>src\Evil\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Evil\Core\Window.h">
       <Filter>src\Evil\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Debug\Instrumentor.h">
+      <Filter>src\Evil\Debug</Filter>
     </ClInclude>
     <ClInclude Include="src\Evil\Events\ApplicationEvent.h">
       <Filter>src\Evil\Events</Filter>
@@ -1371,6 +1380,9 @@
     <ClInclude Include="src\Evil\Renderer\Renderer.h">
       <Filter>src\Evil\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\Evil\Renderer\Renderer2D.h">
+      <Filter>src\Evil\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Evil\Renderer\RendererAPI.h">
       <Filter>src\Evil\Renderer</Filter>
     </ClInclude>
@@ -1386,17 +1398,15 @@
     <ClInclude Include="src\evilpch.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Evil\Renderer\Renderer2D.h" />
-    <ClInclude Include="src\Evil\Debug\Instrumentor.h" />
-    <ClInclude Include="src\Evil\Core\MouseCodes.h">
-      <Filter>src\Evil\Core</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vendor\stb_image\stb_image.cpp">
       <Filter>Vendor\stb_image</Filter>
     </ClCompile>
     <ClCompile Include="src\Evil\Core\Application.cpp">
+      <Filter>src\Evil\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Evil\Core\Input.cpp">
       <Filter>src\Evil\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Evil\Core\Layer.cpp">
@@ -1406,6 +1416,9 @@
       <Filter>src\Evil\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Evil\Core\Log.cpp">
+      <Filter>src\Evil\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Evil\Core\Window.cpp">
       <Filter>src\Evil\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Evil\ImGui\ImGuiBuild.cpp">
@@ -1441,6 +1454,9 @@
     <ClCompile Include="src\Evil\Renderer\Buffer.cpp">
       <Filter>src\Evil\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\Evil\Renderer\GraphicsContext.cpp">
+      <Filter>src\Evil\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\Evil\Renderer\OrthographicCamera.cpp">
       <Filter>src\Evil\Renderer</Filter>
     </ClCompile>
@@ -1451,6 +1467,9 @@
       <Filter>src\Evil\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Evil\Renderer\Renderer.cpp">
+      <Filter>src\Evil\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Evil\Renderer\Renderer2D.cpp">
       <Filter>src\Evil\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Evil\Renderer\RendererAPI.cpp">
@@ -1468,9 +1487,5 @@
     <ClCompile Include="src\evilpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Evil\Renderer\Renderer2D.cpp" />
-    <ClCompile Include="src\Evil\Renderer\GraphicsContext.cpp" />
-    <ClCompile Include="src\Evil\Core\Input.cpp" />
-    <ClCompile Include="src\Evil\Core\Window.cpp" />
   </ItemGroup>
 </Project>

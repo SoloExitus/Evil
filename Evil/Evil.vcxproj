@@ -144,8 +144,6 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Evil\Debug\Instrumentor.h" />
-    <ClInclude Include="src\Evil\Renderer\Renderer2D.h" />
     <ClInclude Include="Vendor\glm\glm\common.hpp" />
     <ClInclude Include="Vendor\glm\glm\detail\_features.hpp" />
     <ClInclude Include="Vendor\glm\glm\detail\_fixes.hpp" />
@@ -567,6 +565,7 @@
     <ClInclude Include="src\Evil\Core\MouseCodes.h" />
     <ClInclude Include="src\Evil\Core\Timestep.h" />
     <ClInclude Include="src\Evil\Core\Window.h" />
+    <ClInclude Include="src\Evil\Debug\Instrumentor.h" />
     <ClInclude Include="src\Evil\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Evil\Events\Event.h" />
     <ClInclude Include="src\Evil\Events\KeyEvent.h" />
@@ -586,6 +585,7 @@
     <ClInclude Include="src\Evil\Renderer\OrthographicCameraController.h" />
     <ClInclude Include="src\Evil\Renderer\RenderCommand.h" />
     <ClInclude Include="src\Evil\Renderer\Renderer.h" />
+    <ClInclude Include="src\Evil\Renderer\Renderer2D.h" />
     <ClInclude Include="src\Evil\Renderer\RendererAPI.h" />
     <ClInclude Include="src\Evil\Renderer\Shader.h" />
     <ClInclude Include="src\Evil\Renderer\Texture.h" />
@@ -593,15 +593,13 @@
     <ClInclude Include="src\evilpch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Evil\Core\Input.cpp" />
-    <ClCompile Include="src\Evil\Core\Window.cpp" />
-    <ClCompile Include="src\Evil\Renderer\GraphicsContext.cpp" />
-    <ClCompile Include="src\Evil\Renderer\Renderer2D.cpp" />
     <ClCompile Include="Vendor\stb_image\stb_image.cpp" />
     <ClCompile Include="src\Evil\Core\Application.cpp" />
+    <ClCompile Include="src\Evil\Core\Input.cpp" />
     <ClCompile Include="src\Evil\Core\Layer.cpp" />
     <ClCompile Include="src\Evil\Core\LayerStack.cpp" />
     <ClCompile Include="src\Evil\Core\Log.cpp" />
+    <ClCompile Include="src\Evil\Core\Window.cpp" />
     <ClCompile Include="src\Evil\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Evil\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Evil\Platform\OpenGL\OpenGLBuffer.cpp" />
@@ -613,10 +611,12 @@
     <ClCompile Include="src\Evil\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Evil\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Evil\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Evil\Renderer\GraphicsContext.cpp" />
     <ClCompile Include="src\Evil\Renderer\OrthographicCamera.cpp" />
     <ClCompile Include="src\Evil\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\Evil\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\Evil\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\Evil\Renderer\Renderer2D.cpp" />
     <ClCompile Include="src\Evil\Renderer\RendererAPI.cpp" />
     <ClCompile Include="src\Evil\Renderer\Shader.cpp" />
     <ClCompile Include="src\Evil\Renderer\Texture.cpp" />

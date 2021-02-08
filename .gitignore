@@ -3,6 +3,9 @@
 !Vendor/bin/premake/
 bin-int/
 
+# Evil files
+*.log
+
 # Visual Studio files and folder
 .vs/
 **.sin
