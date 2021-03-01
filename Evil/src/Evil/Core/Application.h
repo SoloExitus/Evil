@@ -26,9 +26,9 @@ namespace Evil
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* Overlay);
 
-		inline Window& GetWindow() { return *m_Window; }
+		Window& GetWindow() { return *m_Window; }
 
-		inline static Application& Get() { return *s_Instance; }
+		static Application& Get() { return *s_Instance; }
 	private:
 		void Run();
 		bool OnWindowClose(WindowCloseEvent& e);
