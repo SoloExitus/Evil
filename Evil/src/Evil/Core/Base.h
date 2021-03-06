@@ -44,13 +44,23 @@
 #endif // End of platform detection
 
 #ifdef EVIL_DEBUG
+	#if defined(EVIL_PLATFORM_WINDOWS)
+		#define EVIL_DEBUGBREAK() __debugbreak()
+	#elif defined(EVIL_PLATFORM_LINUX)
+		#include <signal.h>
+		#define EVIL_DEBUGBREAK() raise(SIGTRAP)
+	#else
+		#error "Platform doesn't support debugbreak yet!"
+	#endif
 	#define EVIL_ENABLE_ASSERTS
+#else
+	#define EVIL_DEBUGBREAK()
 #endif // EVIL_DEBUG
 
 
 #ifdef EVIL_ENABLE_ASSERTS
-#define EVIL_ASSERT(x, ...) { if(!(x)) { EVIL_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
-#define EVIL_CORE_ASSERT(x, ...) { if(!(x)) { EVIL_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#define EVIL_ASSERT(x, ...) { if(!(x)) { EVIL_ERROR("Assertion Failed: {0}", __VA_ARGS__); EVIL_DEBUGBREAK(); } }
+#define EVIL_CORE_ASSERT(x, ...) { if(!(x)) { EVIL_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); EVIL_DEBUGBREAK(); } }
 #else
 	#define EVIL_ASSERT(x, ...)
 	#define EVIL_CORE_ASSERT(x, ...)

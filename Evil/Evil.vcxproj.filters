@@ -1290,9 +1290,6 @@
     <ClInclude Include="src\Evil\Core\Application.h">
       <Filter>src\Evil\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Evil\Core\Core.h">
-      <Filter>src\Evil\Core</Filter>
-    </ClInclude>
     <ClInclude Include="src\Evil\Core\EntryPoint.h">
       <Filter>src\Evil\Core</Filter>
     </ClInclude>
@@ -1397,6 +1394,9 @@
     </ClInclude>
     <ClInclude Include="src\evilpch.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Core\Base.h">
+      <Filter>src\Evil\Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

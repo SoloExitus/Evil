@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Evil/Core/Core.h"
+#include "Evil/Core/Base.h"
 #include "Evil/Events/Event.h"
 
 namespace Evil

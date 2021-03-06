@@ -1,7 +1,7 @@
 #pragma once
 #include "evilpch.h"
 
-#include "Evil/Core/Core.h"
+#include "Evil/Core/Base.h"
 
 namespace Evil
 {

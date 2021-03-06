@@ -64,9 +64,9 @@ namespace Evil
 
 		for (auto it = m_LayerStack.rbegin(); it != reverseEnd; ++it)
 		{
-			(*it)->OnEvent(e);
 			if (e.Handled)
 				break;
+			(*it)->OnEvent(e);
 		}
 	}
 

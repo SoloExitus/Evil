@@ -56,7 +56,8 @@ project "Evil"
 
 	defines
 	{
-		"_CRT_SECURE_NO_WARNINGS"
+		"_CRT_SECURE_NO_WARNINGS",
+		"GLFW_INCLUDE_NONE"
 	}
 
 	includedirs
@@ -78,15 +79,12 @@ project "Evil"
 		"opengl32.lib"
 	}
 
-
 	filter "system:windows"
 		systemversion "latest"
 
 		defines
 		{
-			"EVIL_PLATFORM_WINDOWS",
-			"EVIL_BUILD_DLL",
-			"GLFW_INCLUDE_NONE",
+
 		}
 
 	filter "configurations:Debug"

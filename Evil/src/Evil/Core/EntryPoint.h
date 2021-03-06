@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Evil/Core/Core.h"
+#include "Evil/Core/Base.h"
 
 #ifdef EVIL_PLATFORM_WINDOWS
 

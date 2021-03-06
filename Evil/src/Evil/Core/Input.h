@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Evil/Core/Core.h"
+#include "Evil/Core/Base.h"
 #include "Evil/Core/KeyCodes.h"
 #include "Evil/Core/MouseCodes.h"
 

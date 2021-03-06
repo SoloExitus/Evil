@@ -2,7 +2,7 @@
 
 //For use by Evil applications
 
-#include "Evil/Core/Core.h"
+#include "Evil/Core/Base.h"
 
 #include "Evil/Core/Application.h"
 #include "Evil/Core/Layer.h"

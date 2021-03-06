@@ -17,11 +17,7 @@ public:
 private:
 	Evil::OrthographicCameraController m_CameraController;
 
-	// Temp
-	Evil::Ref<Evil::VertexArray> m_SquareVA;
-	Evil::Ref<Evil::Shader> m_FlatColorShader;
-
 	Evil::Ref<Evil::Texture2D> m_CheckerboardTexture;
 
-	glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
+	glm::vec4 m_SquareColor;
 };
