@@ -1398,6 +1398,9 @@
     <ClInclude Include="src\Evil\Core\Base.h">
       <Filter>src\Evil\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Evil\Renderer\SubTexture2D.h">
+      <Filter>src\Evil\Renderer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vendor\stb_image\stb_image.cpp">
@@ -1486,6 +1489,9 @@
     </ClCompile>
     <ClCompile Include="src\evilpch.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Evil\Renderer\SubTexture2D.cpp">
+      <Filter>src\Evil\Renderer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

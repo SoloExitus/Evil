@@ -2,6 +2,8 @@
 
 #include "Evil.h"
 
+#include "ParticleSystem.h"
+
 class SandBox2D: public Evil::Layer
 {
 public:
@@ -18,6 +20,11 @@ private:
 	Evil::OrthographicCameraController m_CameraController;
 
 	Evil::Ref<Evil::Texture2D> m_CheckerboardTexture;
+	Evil::Ref<Evil::Texture2D> m_SpriteSheet;
+	Evil::Ref<Evil::SubTexture2D> m_TextureTree;
 
 	glm::vec4 m_SquareColor;
+
+	ParticleSystem m_ParticaleSystem;
+	ParticleProps  m_Particle;
 };

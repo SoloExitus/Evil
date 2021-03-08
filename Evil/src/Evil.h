@@ -23,6 +23,7 @@
 #include "Evil/Renderer/Buffer.h"
 #include "Evil/Renderer/Shader.h"
 #include "Evil/Renderer/Texture.h"
+#include "Evil/Renderer/SubTexture2D.h"
 #include "Evil/Renderer/VertexArray.h"
 
 #include "Evil/Renderer/OrthographicCamera.h"

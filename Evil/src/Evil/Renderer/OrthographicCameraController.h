@@ -8,6 +8,15 @@
 
 namespace Evil
 {
+	struct OrthographicCameraBouns
+	{
+		float Left, Right;
+		float Buttom, Top;
+
+		float GetWidth() { return Right - Left; }
+		float GetHeight() { return Top - Buttom; }
+	};
+
 	class OrthographicCameraController
 	{
 	public:
@@ -21,13 +30,18 @@ namespace Evil
 		const OrthographicCamera& GetCamera() const { return m_Camera; }
 
 		float GetZoomLevel(float level) const { return m_ZoomLevel; }
-		void SetZoomLevel(float level) { m_ZoomLevel = level; }
+		void SetZoomLevel(float level) { m_ZoomLevel = level; CalculateView(); }
+
+		const OrthographicCameraBouns& GetBounds() const { return m_Bounds; }
 	private:
 		bool OnMouseScrolled(MouseScrolledEvent& e);
 		bool OnWindowResized(WindowResizeEvent& e);
 	private:
+		void CalculateView();
+
 		float m_AspectRatio;
 		float m_ZoomLevel = 1.0f;
+		OrthographicCameraBouns m_Bounds;
 		OrthographicCamera m_Camera;
 
 		bool m_Rotation;

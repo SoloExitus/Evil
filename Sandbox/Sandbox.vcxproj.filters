@@ -17,19 +17,11 @@
     </ClCompile>
     <ClCompile Include="src\SandBox2D.cpp" />
     <ClCompile Include="src\ExampleLayer.cpp" />
-    <ClCompile Include="src\MyGame\GameLayer.cpp" />
-    <ClCompile Include="src\MyGame\Level.cpp" />
-    <ClCompile Include="src\MyGame\Player.cpp" />
-    <ClCompile Include="src\MyGame\Random.cpp" />
-    <ClCompile Include="src\MyGame\ParticleSystem.cpp" />
+    <ClCompile Include="src\ParticleSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\SandBox2D.h" />
     <ClInclude Include="src\ExampleLayer.h" />
-    <ClInclude Include="src\MyGame\GameLayer.h" />
-    <ClInclude Include="src\MyGame\Level.h" />
-    <ClInclude Include="src\MyGame\Player.h" />
-    <ClInclude Include="src\MyGame\Random.h" />
-    <ClInclude Include="src\MyGame\ParticleSystem.h" />
+    <ClInclude Include="src\ParticleSystem.h" />
   </ItemGroup>
 </Project>
