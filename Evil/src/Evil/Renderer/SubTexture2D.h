@@ -1,8 +1,7 @@
 #pragma once
 
 #include <glm/glm.hpp>
-
-#include "Texture.h"
+#include "Evil/Renderer/Texture.h"
 
 namespace Evil
 {

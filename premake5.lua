@@ -135,11 +135,54 @@ project "Sandbox"
 	filter "system:windows"
 		systemversion "latest"
 
-		defines
-		{
-			"EVIL_PLATFORM_WINDOWS",
-		}
+	filter "configurations:Debug"
+		defines "EVIL_DEBUG"
+		runtime "Debug"
+		symbols "on"
 
+	filter "configurations:Release"
+		defines "EVIL_RELEASE"
+		runtime "Release"
+		optimize "on"
+
+	filter "configurations:Dist"
+		defines "EVIL_DIST"
+		runtime "Release"
+		optimize "on"
+
+
+project "EvilEditor"
+	location "EvilEditor"
+	kind "ConsoleApp"
+	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
+
+	targetdir("bin/" .. outputdir .. "/%{prj.name}")
+	objdir("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	files
+	{
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp",
+	}
+
+	includedirs
+	{
+		"Evil/Vendor/spdlog/include",
+		"Evil/src",
+		"Evil/Vendor",
+		"%{IncludeDir.glm}"
+		
+	}
+
+	links
+	{
+		"Evil"
+	}
+
+	filter "system:windows"
+		systemversion "latest"
 
 	filter "configurations:Debug"
 		defines "EVIL_DEBUG"

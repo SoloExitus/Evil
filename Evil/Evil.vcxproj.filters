@@ -1290,6 +1290,9 @@
     <ClInclude Include="src\Evil\Core\Application.h">
       <Filter>src\Evil\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Evil\Core\Base.h">
+      <Filter>src\Evil\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\Evil\Core\EntryPoint.h">
       <Filter>src\Evil\Core</Filter>
     </ClInclude>
@@ -1341,6 +1344,9 @@
     <ClInclude Include="src\Evil\Platform\OpenGL\OpenGLContext.h">
       <Filter>src\Evil\Platform\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="src\Evil\Platform\OpenGL\OpenGLFramebuffer.h">
+      <Filter>src\Evil\Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Evil\Platform\OpenGL\OpenGLRendererAPI.h">
       <Filter>src\Evil\Platform\OpenGL</Filter>
     </ClInclude>
@@ -1360,6 +1366,9 @@
       <Filter>src\Evil\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\Evil\Renderer\Buffer.h">
+      <Filter>src\Evil\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Renderer\Framebuffer.h">
       <Filter>src\Evil\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Evil\Renderer\GraphicsContext.h">
@@ -1386,6 +1395,9 @@
     <ClInclude Include="src\Evil\Renderer\Shader.h">
       <Filter>src\Evil\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\Evil\Renderer\SubTexture2D.h">
+      <Filter>src\Evil\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Evil\Renderer\Texture.h">
       <Filter>src\Evil\Renderer</Filter>
     </ClInclude>
@@ -1394,12 +1406,6 @@
     </ClInclude>
     <ClInclude Include="src\evilpch.h">
       <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Evil\Core\Base.h">
-      <Filter>src\Evil\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Evil\Renderer\SubTexture2D.h">
-      <Filter>src\Evil\Renderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1436,6 +1442,9 @@
     <ClCompile Include="src\Evil\Platform\OpenGL\OpenGLContext.cpp">
       <Filter>src\Evil\Platform\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="src\Evil\Platform\OpenGL\OpenGLFramebuffer.cpp">
+      <Filter>src\Evil\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Evil\Platform\OpenGL\OpenGLRendererAPI.cpp">
       <Filter>src\Evil\Platform\OpenGL</Filter>
     </ClCompile>
@@ -1455,6 +1464,9 @@
       <Filter>src\Evil\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Evil\Renderer\Buffer.cpp">
+      <Filter>src\Evil\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Evil\Renderer\Framebuffer.cpp">
       <Filter>src\Evil\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Evil\Renderer\GraphicsContext.cpp">
@@ -1481,6 +1493,9 @@
     <ClCompile Include="src\Evil\Renderer\Shader.cpp">
       <Filter>src\Evil\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\Evil\Renderer\SubTexture2D.cpp">
+      <Filter>src\Evil\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\Evil\Renderer\Texture.cpp">
       <Filter>src\Evil\Renderer</Filter>
     </ClCompile>
@@ -1489,9 +1504,6 @@
     </ClCompile>
     <ClCompile Include="src\evilpch.cpp">
       <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Evil\Renderer\SubTexture2D.cpp">
-      <Filter>src\Evil\Renderer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

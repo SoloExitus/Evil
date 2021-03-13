@@ -20,11 +20,6 @@ private:
 	Evil::OrthographicCameraController m_CameraController;
 
 	Evil::Ref<Evil::Texture2D> m_CheckerboardTexture;
-	Evil::Ref<Evil::Texture2D> m_SpriteSheet;
-	Evil::Ref<Evil::SubTexture2D> m_TextureTree;
 
 	glm::vec4 m_SquareColor;
-
-	ParticleSystem m_ParticaleSystem;
-	ParticleProps  m_Particle;
 };

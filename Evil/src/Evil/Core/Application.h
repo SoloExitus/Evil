@@ -18,7 +18,7 @@ namespace Evil
 	class  Application
 	{
 	public:
-		Application();
+		Application(const std::string& name = "Evill App");
 		virtual ~Application();
 
 		void OnEvent(Event& e);
@@ -27,6 +27,8 @@ namespace Evil
 		void PushOverlay(Layer* Overlay);
 
 		Window& GetWindow() { return *m_Window; }
+
+		void Close();
 
 		static Application& Get() { return *s_Instance; }
 	private:

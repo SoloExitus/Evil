@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ImGui", "Evil\Vendor\imgui\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Evil", "Evil\Evil.vcxproj", "{95E9847C-8120-860D-2A0D-6C101623020F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EvilEditor", "EvilEditor\EvilEditor.vcxproj", "{1C1BB606-08D3-F753-71DA-D0AF5DB19244}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -50,6 +52,12 @@ Global
 		{95E9847C-8120-860D-2A0D-6C101623020F}.Dist|x64.Build.0 = Dist|x64
 		{95E9847C-8120-860D-2A0D-6C101623020F}.Release|x64.ActiveCfg = Release|x64
 		{95E9847C-8120-860D-2A0D-6C101623020F}.Release|x64.Build.0 = Release|x64
+		{1C1BB606-08D3-F753-71DA-D0AF5DB19244}.Debug|x64.ActiveCfg = Debug|x64
+		{1C1BB606-08D3-F753-71DA-D0AF5DB19244}.Debug|x64.Build.0 = Debug|x64
+		{1C1BB606-08D3-F753-71DA-D0AF5DB19244}.Dist|x64.ActiveCfg = Dist|x64
+		{1C1BB606-08D3-F753-71DA-D0AF5DB19244}.Dist|x64.Build.0 = Dist|x64
+		{1C1BB606-08D3-F753-71DA-D0AF5DB19244}.Release|x64.ActiveCfg = Release|x64
+		{1C1BB606-08D3-F753-71DA-D0AF5DB19244}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
