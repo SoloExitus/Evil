@@ -19,7 +19,7 @@ int main(int argc, char** argv)
 	app->Run();
 	EVIL_PROFILE_END_SESSION();
 
-	EVIL_PROFILE_BEGIN_SESSION("Startup", "EvilProfile-Shutdown.json");
+	EVIL_PROFILE_BEGIN_SESSION("Shutdown", "EvilProfile-Shutdown.json");
 	delete app;
 	EVIL_PROFILE_END_SESSION();
 	return 0;
