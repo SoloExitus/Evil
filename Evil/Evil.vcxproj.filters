@@ -1359,9 +1359,6 @@
     <ClInclude Include="src\Evil\Platform\OpenGL\OpenGLVertexArray.h">
       <Filter>src\Evil\Platform\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\Evil\Platform\Windows\WindowsInput.h">
-      <Filter>src\Evil\Platform\Windows</Filter>
-    </ClInclude>
     <ClInclude Include="src\Evil\Platform\Windows\WindowsWindow.h">
       <Filter>src\Evil\Platform\Windows</Filter>
     </ClInclude>
@@ -1413,9 +1410,6 @@
       <Filter>Vendor\stb_image</Filter>
     </ClCompile>
     <ClCompile Include="src\Evil\Core\Application.cpp">
-      <Filter>src\Evil\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Evil\Core\Input.cpp">
       <Filter>src\Evil\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Evil\Core\Layer.cpp">
