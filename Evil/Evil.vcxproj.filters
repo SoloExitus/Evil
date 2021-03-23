@@ -55,6 +55,9 @@
     <Filter Include="src\Evil\Renderer">
       <UniqueIdentifier>{323A02B7-9E50-004D-E7C7-8B6E531DD1D4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Evil\Scene">
+      <UniqueIdentifier>{290F3409-15DD-270F-FE70-9835EADD0374}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vendor\glm\glm\common.hpp">
@@ -1401,6 +1404,12 @@
     <ClInclude Include="src\Evil\Renderer\VertexArray.h">
       <Filter>src\Evil\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\Evil\Scene\Components.h">
+      <Filter>src\Evil\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Scene\Scene.h">
+      <Filter>src\Evil\Scene</Filter>
+    </ClInclude>
     <ClInclude Include="src\evilpch.h">
       <Filter>src</Filter>
     </ClInclude>
@@ -1495,6 +1504,9 @@
     </ClCompile>
     <ClCompile Include="src\Evil\Renderer\VertexArray.cpp">
       <Filter>src\Evil\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Evil\Scene\Scene.cpp">
+      <Filter>src\Evil\Scene</Filter>
     </ClCompile>
     <ClCompile Include="src\evilpch.cpp">
       <Filter>src</Filter>

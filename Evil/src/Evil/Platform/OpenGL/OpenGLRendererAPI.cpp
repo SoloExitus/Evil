@@ -41,6 +41,8 @@ namespace Evil
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 		glEnable(GL_DEPTH_TEST);
+
+		glDepthFunc(GL_LEQUAL); // A fragment passes the test if its depth value is less than or equal to the depth value in the buffer
 	}
 
 	void OpenGLRendererAPI::SetViewport(uint32_t x, uint32_t y, uint32_t width, uint32_t height)

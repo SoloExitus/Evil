@@ -23,6 +23,7 @@ workspace "Evil"
 	IncludeDir["ImGui"] = "Evil/Vendor/imgui"
 	IncludeDir["glm"] = "Evil/Vendor/glm"
 	IncludeDir["stb_image"] = "Evil/Vendor/stb_image"
+	IncludeDir["entt"] = "Evil/Vendor/entt/include"
 
 	group "Dependencies"
 	include "Evil/Vendor/GLFW"
@@ -67,7 +68,8 @@ workspace "Evil"
 			"%{IncludeDir.Glad}",
 			"%{IncludeDir.ImGui}",
 			"%{IncludeDir.glm}",
-			"%{IncludeDir.stb_image}"
+			"%{IncludeDir.stb_image}",
+			"%{IncludeDir.entt}"
 		}
 
 		links
@@ -122,7 +124,8 @@ workspace "Evil"
 			"Evil/Vendor/spdlog/include",
 			"Evil/src",
 			"Evil/Vendor",
-			"%{IncludeDir.glm}"	
+			"%{IncludeDir.glm}",
+			"%{IncludeDir.entt}"
 		}
 
 		links
@@ -169,7 +172,8 @@ workspace "Evil"
 			"Evil/Vendor/spdlog/include",
 			"Evil/src",
 			"Evil/Vendor",
-			"%{IncludeDir.glm}"
+			"%{IncludeDir.glm}",
+			"%{IncludeDir.entt}"
 		}
 
 		links

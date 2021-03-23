@@ -57,7 +57,7 @@
 	#define EVIL_DEBUGBREAK()
 #endif // EVIL_DEBUG
 
-
+// TODO: Make this macro able to take in no arguments except condition
 #ifdef EVIL_ENABLE_ASSERTS
 #define EVIL_ASSERT(x, ...) { if(!(x)) { EVIL_ERROR("Assertion Failed: {0}", __VA_ARGS__); EVIL_DEBUGBREAK(); } }
 #define EVIL_CORE_ASSERT(x, ...) { if(!(x)) { EVIL_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); EVIL_DEBUGBREAK(); } }

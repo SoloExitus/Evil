@@ -14,6 +14,8 @@
 
 #include "Evil/ImGui/ImGuiLayer.h"
 
+#include "Evil/Scene/Scene.h"
+#include "Evil/Scene/Components.h"
 
 // ---Renderer -------------------------------
 #include "Evil/Renderer/Renderer.h"
