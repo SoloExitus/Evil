@@ -26,16 +26,9 @@ namespace Evil {
 
 	class Instrumentor
 	{
-	private:
-		std::mutex m_Mutex;
-		InstrumentationSession* m_CurrentSession;
-		std::ofstream m_OutputStream;
-		
 	public:
-		Instrumentor()
-			: m_CurrentSession(nullptr)
-		{
-		}
+		Instrumentor(const Instrumentor&) = delete;
+		Instrumentor(Instrumentor&&) = delete;
 
 		void BeginSession(const std::string& name, const std::string& filepath = "results.json")
 		{
@@ -106,6 +99,16 @@ namespace Evil {
 
 	private:
 
+		Instrumentor()
+			: m_CurrentSession(nullptr)
+		{
+		}
+
+		~Instrumentor()
+		{
+			EndSession();
+		}
+
 		void WriteHeader()
 		{
 			m_OutputStream << "{\"otherData\": {},\"traceEvents\":[{}";
@@ -130,6 +133,12 @@ namespace Evil {
 				m_CurrentSession = nullptr;
 			}
 		}
+
+	private:
+		std::mutex m_Mutex;
+		InstrumentationSession* m_CurrentSession;
+		std::ofstream m_OutputStream;
+
 	};
 
 	class InstrumentationTimer
@@ -224,13 +233,15 @@ namespace Evil {
 
 	#define EVIL_PROFILE_BEGIN_SESSION(name, filepath) ::Evil::Instrumentor::Get().BeginSession(name, filepath)
 	#define EVIL_PROFILE_END_SESSION() ::Evil::Instrumentor::Get().EndSession()
-	#define EVIL_PROFILE_SCOPE(name) constexpr auto fixedName = ::Evil::InstrumentorUtils::CleanupOutputString(name, "__cdecl ");\
-									::Evil::InstrumentationTimer timer##__LINE__(fixedName.Data)
+	#define EVIL_PROFILE_SCOPE_LINE2(name, line) constexpr auto fixedName##line = ::Evil::InstrumentorUtils::CleanupOutputString(name, "__cdecl ");\
+											   ::Evil::InstrumentationTimer timer##line(fixedName##line.Data)
+	#define EVIL_PROFILE_SCOPE_LINE(name, line) EVIL_PROFILE_SCOPE_LINE2(name, line)
+	#define EVIL_PROFILE_SCOPE(name) EVIL_PROFILE_SCOPE_LINE(name, __LINE__)
 	#define EVIL_PROFILE_FUNCTION() EVIL_PROFILE_SCOPE(EVIL_FUNC_SIG)
-
 #else
 	#define EVIL_PROFILE_BEGIN_SESSION(name, filepath)
 	#define EVIL_PROFILE_END_SESSION()
 	#define EVIL_PROFILE_SCOPE(name)
 	#define EVIL_PROFILE_FUNCTION()
+
 #endif

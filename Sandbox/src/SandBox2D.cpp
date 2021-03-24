@@ -59,7 +59,6 @@ void SandBox2D::OnUpdate(Evil::Timestep ts)
 
 		Evil::Renderer2D::DrawQuad({ 0.0f, -3.0f, 0.1f }, { 1.0f, 1.0f }, m_CLogo);
 		Evil::Renderer2D::DrawRotatedQuad({ -1.0f, -3.0f, 0.1f }, { 1.0f, 2.0f }, glm::radians(rotation), m_TextureTree);
-		//Evil::Renderer2D::DrawRotatedQuad({ 0.0f, -3.0f, 0.1f }, { 1.0f, 1.0f }, glm::radians(rotation), m_CLogo);
 
 		Evil::Renderer2D::EndScene();
 
