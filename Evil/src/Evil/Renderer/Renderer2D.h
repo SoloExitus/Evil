@@ -5,6 +5,8 @@
 #include "Evil/Renderer/Texture.h"
 #include "Evil/Renderer/SubTexture2D.h"
 
+#include "Evil/Renderer/Camera.h"
+
 namespace Evil
 {
 	class Renderer2D
@@ -13,7 +15,8 @@ namespace Evil
 		static void Init();
 		static void Shutdown();
 
-		static void BeginScene(const OrthographicCamera& camera);
+		static void BeginScene(const Camera& camera, const glm::mat4& transform);
+		static void BeginScene(const OrthographicCamera& camera); // TODO: Remove
 		static void EndScene();
 		static void Flush();
 

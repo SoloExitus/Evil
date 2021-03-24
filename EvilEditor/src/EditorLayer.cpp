@@ -26,6 +26,9 @@ namespace Evil
 		m_ActiveScene = CreateRef<Scene>();
 
 		// Entity
+		m_CameraEntity = m_ActiveScene->CreateEntity("Camera Entity");
+		m_CameraEntity.AddComponent<CameraComponent>(glm::ortho(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
+
 		auto square = m_ActiveScene->CreateEntity("Green Square");
 		square.AddComponent<SpriteRendererComponent>(glm::vec4{ 0.0f, 1.0f, 0.0f, 1.0f });
 
@@ -60,12 +63,8 @@ namespace Evil
 		RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 0.1f });
 		RenderCommand::Clear();
 		
-		Renderer2D::BeginScene(m_CameraController.GetCamera());
-		
 		// Update scene
 		m_ActiveScene->OnUpdate(ts);
-
-		Renderer2D::EndScene();
 
 		m_Framebuffer->Unbind();
 	}
@@ -142,6 +141,9 @@ namespace Evil
 		ImGui::Text("Quads: %d", stats.QuadCount);
 		ImGui::Text("Vertices: %d", stats.GetTotalVertexCount());
 		ImGui::Text("Indices: %d", stats.GetTotalIndexCount());
+
+		ImGui::DragFloat3("Camera Transform",
+			glm::value_ptr(m_CameraEntity.GetComponent<TransformComponent>().Transform[3]));
 
 		if (m_SquareEntity)
 		{

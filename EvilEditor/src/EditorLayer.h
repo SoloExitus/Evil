@@ -22,6 +22,7 @@ namespace Evil
 		Ref<Texture2D> m_CheckerboardTexture;
 
 		Ref<Scene> m_ActiveScene;
+		Entity m_CameraEntity;
 		Entity m_SquareEntity;
 
 		bool m_ViewportFocused = false, m_ViewportHovered = false;
