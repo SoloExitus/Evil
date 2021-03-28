@@ -10,7 +10,31 @@
 
 namespace Evil 
 {
+	/* ENTT EXAMPLE CODE
+	entt::entity entity = m_Registry.create();
+	m_Registry.emplace<TransformComponent>(entity, glm::mat4(1.0f));
 
+	m_Registry.on_construct<TransformComponent>().connect<&OnTransformConstruct>();
+
+
+	if (m_Registry.has<TransformComponent>(entity))
+		TransformComponent& transform = m_Registry.get<TransformComponent>(entity);
+
+
+	auto view = m_Registry.view<TransformComponent>();
+	for (auto entity : view)
+	{
+		TransformComponent& transform = view.get<TransformComponent>(entity);
+	}
+
+	auto group = m_Registry.group<TransformComponent>(entt::get<MeshComponent>);
+	for (auto entity : group)
+	{
+		auto& [transform, mesh] = group.get<TransformComponent, MeshComponent>(entity);
+	}
+	*/
+
+	/*
 	static void DoMath(const glm::mat4& transform)
 	{
 
@@ -20,32 +44,10 @@ namespace Evil
 	{
 
 	}
+	*/
 
 	Scene::Scene()
 	{
-#if ENTT_EXAMPLE_CODE
-		entt::entity entity = m_Registry.create();
-		m_Registry.emplace<TransformComponent>(entity, glm::mat4(1.0f));
-
-		m_Registry.on_construct<TransformComponent>().connect<&OnTransformConstruct>();
-
-
-		if (m_Registry.has<TransformComponent>(entity))
-			TransformComponent& transform = m_Registry.get<TransformComponent>(entity);
-
-
-		auto view = m_Registry.view<TransformComponent>();
-		for (auto entity : view)
-		{
-			TransformComponent& transform = view.get<TransformComponent>(entity);
-		}
-
-		auto group = m_Registry.group<TransformComponent>(entt::get<MeshComponent>);
-		for (auto entity : group)
-		{
-			auto& [transform, mesh] = group.get<TransformComponent, MeshComponent>(entity);
-		}
-#endif
 	}
 
 	Scene::~Scene()
@@ -69,10 +71,10 @@ namespace Evil
 		glm::mat4* cameraTransform = nullptr;
 
 		{
-			auto group = m_Registry.view<TransformComponent, CameraComponent>();
-			for (auto entity : group)
+			auto view = m_Registry.view<TransformComponent, CameraComponent>();
+			for (auto entity : view)
 			{
-				auto& [transform, camera] = group.get<TransformComponent, CameraComponent>(entity);
+				auto& [transform, camera] = view.get<TransformComponent, CameraComponent>(entity);
 
 				if (camera.Primary)
 				{
@@ -98,6 +100,21 @@ namespace Evil
 			Renderer2D::EndScene();
 		}
 
+	}
+
+	void Scene::OnViewportResize(uint32_t width, uint32_t height)
+	{
+		m_ViewportWidth = width;
+		m_ViewportHeight = height;
+
+		// Resize our non-FixedAspectRatio cameras
+		auto view = m_Registry.view<CameraComponent>();
+		for (auto entity : view)
+		{
+			auto& cameraComponent = view.get<CameraComponent>(entity);
+			if (!cameraComponent.FixedAspectRatio)
+				cameraComponent.Camera.SetViewportSize(width, height);
+		}
 	}
 
 }

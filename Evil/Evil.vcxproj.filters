@@ -1415,6 +1415,7 @@
     </ClInclude>
     <ClInclude Include="src\Evil\Scene\Entity.h" />
     <ClInclude Include="src\Evil\Renderer\Camera.h" />
+    <ClInclude Include="src\Evil\Scene\SceneCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vendor\stb_image\stb_image.cpp">
@@ -1514,5 +1515,6 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\Evil\Scene\Entity.cpp" />
+    <ClCompile Include="src\Evil\Scene\SceneCamera.cpp" />
   </ItemGroup>
 </Project>

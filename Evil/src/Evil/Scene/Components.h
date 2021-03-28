@@ -2,7 +2,7 @@
 
 #include <glm/glm.hpp>
 
-#include "Evil/Renderer/Camera.h"
+#include "SceneCamera.h"
 
 namespace Evil 
 {
@@ -42,13 +42,12 @@ namespace Evil
 
 	struct CameraComponent
 	{
-		Evil::Camera Camera;
+		SceneCamera Camera;
 		bool Primary = true; // TODO: think about moving to Scene
+		bool FixedAspectRatio = false;
 
 		CameraComponent() = default;
 		CameraComponent(const CameraComponent&) = default;
-		CameraComponent(const glm::mat4& projection)
-			: Camera(projection) {}
 	};
 
 }
