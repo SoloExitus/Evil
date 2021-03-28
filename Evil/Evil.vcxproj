@@ -147,6 +147,7 @@
     <ClInclude Include="src\Evil\Renderer\Camera.h" />
     <ClInclude Include="src\Evil\Scene\Entity.h" />
     <ClInclude Include="src\Evil\Scene\SceneCamera.h" />
+    <ClInclude Include="src\Evil\Scene\ScriptableEntity.h" />
     <ClInclude Include="Vendor\glm\glm\common.hpp" />
     <ClInclude Include="Vendor\glm\glm\detail\_features.hpp" />
     <ClInclude Include="Vendor\glm\glm\detail\_fixes.hpp" />

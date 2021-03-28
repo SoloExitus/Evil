@@ -16,6 +16,7 @@
 
 #include "Evil/Scene/Scene.h"
 #include "Evil/Scene/Entity.h"
+#include "Evil/Scene/ScriptableEntity.h"
 #include "Evil/Scene/Components.h"
 
 // ---Renderer -------------------------------

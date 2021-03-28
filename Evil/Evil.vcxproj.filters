@@ -1416,6 +1416,7 @@
     <ClInclude Include="src\Evil\Scene\Entity.h" />
     <ClInclude Include="src\Evil\Renderer\Camera.h" />
     <ClInclude Include="src\Evil\Scene\SceneCamera.h" />
+    <ClInclude Include="src\Evil\Scene\ScriptableEntity.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vendor\stb_image\stb_image.cpp">
