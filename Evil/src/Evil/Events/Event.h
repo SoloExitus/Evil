@@ -1,6 +1,7 @@
 #pragma once
-#include "evilpch.h"
+#include <functional>
 
+#include "Evil/Debug/Instrumentor.h"
 #include "Evil/Core/Base.h"
 
 namespace Evil

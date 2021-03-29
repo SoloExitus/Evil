@@ -144,10 +144,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Evil\Renderer\Camera.h" />
-    <ClInclude Include="src\Evil\Scene\Entity.h" />
-    <ClInclude Include="src\Evil\Scene\SceneCamera.h" />
-    <ClInclude Include="src\Evil\Scene\ScriptableEntity.h" />
+    <ClInclude Include="src\Evil\Core\PlatformDetection.h" />
     <ClInclude Include="Vendor\glm\glm\common.hpp" />
     <ClInclude Include="Vendor\glm\glm\detail\_features.hpp" />
     <ClInclude Include="Vendor\glm\glm\detail\_fixes.hpp" />
@@ -584,6 +581,7 @@
     <ClInclude Include="src\Evil\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="src\Evil\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Evil\Renderer\Buffer.h" />
+    <ClInclude Include="src\Evil\Renderer\Camera.h" />
     <ClInclude Include="src\Evil\Renderer\Framebuffer.h" />
     <ClInclude Include="src\Evil\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Evil\Renderer\OrthographicCamera.h" />
@@ -597,12 +595,13 @@
     <ClInclude Include="src\Evil\Renderer\Texture.h" />
     <ClInclude Include="src\Evil\Renderer\VertexArray.h" />
     <ClInclude Include="src\Evil\Scene\Components.h" />
+    <ClInclude Include="src\Evil\Scene\Entity.h" />
     <ClInclude Include="src\Evil\Scene\Scene.h" />
+    <ClInclude Include="src\Evil\Scene\SceneCamera.h" />
+    <ClInclude Include="src\Evil\Scene\ScriptableEntity.h" />
     <ClInclude Include="src\evilpch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Evil\Scene\Entity.cpp" />
-    <ClCompile Include="src\Evil\Scene\SceneCamera.cpp" />
     <ClCompile Include="Vendor\stb_image\stb_image.cpp" />
     <ClCompile Include="src\Evil\Core\Application.cpp" />
     <ClCompile Include="src\Evil\Core\Layer.cpp" />
@@ -633,7 +632,9 @@
     <ClCompile Include="src\Evil\Renderer\SubTexture2D.cpp" />
     <ClCompile Include="src\Evil\Renderer\Texture.cpp" />
     <ClCompile Include="src\Evil\Renderer\VertexArray.cpp" />
+    <ClCompile Include="src\Evil\Scene\Entity.cpp" />
     <ClCompile Include="src\Evil\Scene\Scene.cpp" />
+    <ClCompile Include="src\Evil\Scene\SceneCamera.cpp" />
     <ClCompile Include="src\evilpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>

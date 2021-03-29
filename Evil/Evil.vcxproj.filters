@@ -1368,6 +1368,9 @@
     <ClInclude Include="src\Evil\Renderer\Buffer.h">
       <Filter>src\Evil\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\Evil\Renderer\Camera.h">
+      <Filter>src\Evil\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Evil\Renderer\Framebuffer.h">
       <Filter>src\Evil\Renderer</Filter>
     </ClInclude>
@@ -1407,16 +1410,22 @@
     <ClInclude Include="src\Evil\Scene\Components.h">
       <Filter>src\Evil\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="src\Evil\Scene\Entity.h">
+      <Filter>src\Evil\Scene</Filter>
+    </ClInclude>
     <ClInclude Include="src\Evil\Scene\Scene.h">
+      <Filter>src\Evil\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Scene\SceneCamera.h">
+      <Filter>src\Evil\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Evil\Scene\ScriptableEntity.h">
       <Filter>src\Evil\Scene</Filter>
     </ClInclude>
     <ClInclude Include="src\evilpch.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Evil\Scene\Entity.h" />
-    <ClInclude Include="src\Evil\Renderer\Camera.h" />
-    <ClInclude Include="src\Evil\Scene\SceneCamera.h" />
-    <ClInclude Include="src\Evil\Scene\ScriptableEntity.h" />
+    <ClInclude Include="src\Evil\Core\PlatformDetection.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vendor\stb_image\stb_image.cpp">
@@ -1509,13 +1518,17 @@
     <ClCompile Include="src\Evil\Renderer\VertexArray.cpp">
       <Filter>src\Evil\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\Evil\Scene\Entity.cpp">
+      <Filter>src\Evil\Scene</Filter>
+    </ClCompile>
     <ClCompile Include="src\Evil\Scene\Scene.cpp">
+      <Filter>src\Evil\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Evil\Scene\SceneCamera.cpp">
       <Filter>src\Evil\Scene</Filter>
     </ClCompile>
     <ClCompile Include="src\evilpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Evil\Scene\Entity.cpp" />
-    <ClCompile Include="src\Evil\Scene\SceneCamera.cpp" />
   </ItemGroup>
 </Project>

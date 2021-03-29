@@ -95,25 +95,23 @@ namespace Evil
 			{
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
-				KeyCode keycode = static_cast<KeyCode>(key);
-
 				switch (action)
 				{
 					case GLFW_PRESS:
 					{
-						KeyPressedEvent event(keycode, 0);
+						KeyPressedEvent event(key, 0);
 						data.EventCallback(event);
 						break;
 					}
 					case GLFW_RELEASE:
 					{
-						KeyReleasedEvent event(keycode);
+						KeyReleasedEvent event(key);
 						data.EventCallback(event);
 						break;
 					}
 					case GLFW_REPEAT:
 					{
-						KeyPressedEvent event(keycode, 0);
+						KeyPressedEvent event(key, 1);
 						data.EventCallback(event);
 						break;
 					}
@@ -124,7 +122,7 @@ namespace Evil
 		glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int keycode)
 			{
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
-				KeyTypedEvent event(static_cast<KeyCode>(keycode));
+				KeyTypedEvent event(keycode);
 				data.EventCallback(event);
 			}
 		);
@@ -133,19 +131,17 @@ namespace Evil
 			{
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
-				MouseCode buttoncode = static_cast<MouseCode>(button);
-
 				switch (action)
 				{
 					case GLFW_PRESS:
 					{
-						MouseButtonPressedEvent event(buttoncode);
+						MouseButtonPressedEvent event(button);
 						data.EventCallback(event);
 						break;
 					}
 					case GLFW_RELEASE:
 					{
-						MouseButtonReleasedEvent event(buttoncode);
+						MouseButtonReleasedEvent event(button);
 						data.EventCallback(event);
 						break;
 					}

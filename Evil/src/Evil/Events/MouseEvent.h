@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Evil/Events/Event.h"
-#include "Evil/Core/Input.h"
+#include "Evil/Core/MouseCodes.h"
 
 namespace Evil
 {
@@ -52,11 +52,11 @@ namespace Evil
 	class MouseButtonEvent : public Event
 	{
 	public:
-		inline MouseCode GetMouseButton() const { return m_Button; }
+		MouseCode GetMouseButton() const { return m_Button; }
 
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 	protected:
-		MouseButtonEvent(MouseCode button)
+		MouseButtonEvent(const MouseCode button)
 			: m_Button(button) {}
 
 		MouseCode m_Button;
@@ -65,7 +65,7 @@ namespace Evil
 	class MouseButtonPressedEvent : public MouseButtonEvent
 	{
 	public:
-		MouseButtonPressedEvent(MouseCode button)
+		MouseButtonPressedEvent(const MouseCode button)
 			: MouseButtonEvent(button) {}
 
 		std::string ToString() const override
@@ -81,7 +81,7 @@ namespace Evil
 	class MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
-		MouseButtonReleasedEvent(MouseCode button)
+		MouseButtonReleasedEvent(const MouseCode button)
 			: MouseButtonEvent(button) {}
 
 		std::string ToString() const override

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <sstream>
+
 #include "Evil/Core/Base.h"
 #include "Evil/Events/Event.h"
 
