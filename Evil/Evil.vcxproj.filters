@@ -1428,6 +1428,7 @@
     <ClInclude Include="src\evilpch.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\Evil\Core\Assert.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vendor\stb_image\stb_image.cpp">

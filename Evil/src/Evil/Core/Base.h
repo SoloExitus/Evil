@@ -18,14 +18,8 @@
 	#define EVIL_DEBUGBREAK()
 #endif // EVIL_DEBUG
 
-// TODO: Make this macro able to take in no arguments except condition
-#ifdef EVIL_ENABLE_ASSERTS
-#define EVIL_ASSERT(x, ...) { if(!(x)) { EVIL_ERROR("Assertion Failed: {0}", __VA_ARGS__); EVIL_DEBUGBREAK(); } }
-#define EVIL_CORE_ASSERT(x, ...) { if(!(x)) { EVIL_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); EVIL_DEBUGBREAK(); } }
-#else
-	#define EVIL_ASSERT(x, ...)
-	#define EVIL_CORE_ASSERT(x, ...)
-#endif //EVIL_ENABLE_ASSERTS
+#define EVIL_EXPAND_MACRO(x) x
+#define EVIL_STRINGIFY_MACRO(x) #x
 
 #define BIT(x) (1 << x)
 
@@ -50,3 +44,6 @@ namespace Evil
 		return std::make_shared<T>(std::forward<Args>(args)...);
 	}
 }
+
+#include "Evil/Core/Log.h"
+#include "Evil/Core/Assert.h"

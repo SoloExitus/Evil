@@ -1,8 +1,11 @@
 #include "evilpch.h"
 #include "Evil/Core/Log.h"
 
+// This ignores all warnings raised inside External headers
+#pragma warning(push, 0)
 #include <spdlog/sinks/stdout_color_sinks.h>
 #include <spdlog/sinks/basic_file_sink.h>
+#pragma warning(pop)
 
 namespace Evil
 {

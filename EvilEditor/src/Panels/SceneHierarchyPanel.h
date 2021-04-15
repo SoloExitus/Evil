@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Evil/Core/Base.h"
-#include "Evil/Core/Log.h"
 #include "Evil/Scene/Scene.h"
 #include "Evil/Scene/Entity.h"
 

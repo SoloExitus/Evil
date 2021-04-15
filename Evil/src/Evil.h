@@ -7,6 +7,7 @@
 #include "Evil/Core/Application.h"
 #include "Evil/Core/Layer.h"
 #include "Evil/Core/Log.h"
+#include "Evil/Core/Assert.h"
 
 #include "Evil/Core/Input.h"
 #include "Evil/Core/KeyCodes.h"
