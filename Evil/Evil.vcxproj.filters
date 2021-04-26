@@ -1293,6 +1293,9 @@
     <ClInclude Include="src\Evil\Core\Application.h">
       <Filter>src\Evil\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Evil\Core\Assert.h">
+      <Filter>src\Evil\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\Evil\Core\Base.h">
       <Filter>src\Evil\Core</Filter>
     </ClInclude>
@@ -1428,7 +1431,7 @@
     <ClInclude Include="src\evilpch.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Evil\Core\Assert.h" />
+    <ClInclude Include="src\Evil\Scene\SceneSerializer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vendor\stb_image\stb_image.cpp">
@@ -1533,5 +1536,6 @@
     <ClCompile Include="src\evilpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Evil\Scene\SceneSerializer.cpp" />
   </ItemGroup>
 </Project>

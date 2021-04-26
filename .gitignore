@@ -6,6 +6,9 @@ bin-int/
 # Evil files
 *.log
 
+# Evil Profiler
+EvilProfile*.json
+
 # Visual Studio files and folder
 .vs/
 **.sln

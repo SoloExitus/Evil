@@ -4,6 +4,8 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include "Evil/Scene/SceneSerializer.h"
+
 namespace Evil
 {
 	EditorLayer::EditorLayer()
@@ -25,6 +27,7 @@ namespace Evil
 
 		m_ActiveScene = CreateRef<Scene>();
 
+#if 0
 		// Entity
 		m_CameraEntity = m_ActiveScene->CreateEntity("Camera A");
 		m_CameraEntity.AddComponent<CameraComponent>();
@@ -74,6 +77,8 @@ namespace Evil
 
 		m_CameraEntity.AddComponent<NativeScriptComponent>().Bind<CameraController>();
 		m_SecondCamera.AddComponent<NativeScriptComponent>().Bind<CameraController>();
+
+#endif
 
 		m_SceneHierarchyPanel.SetContext(m_ActiveScene);
 	}
@@ -175,6 +180,18 @@ namespace Evil
 				// Disabling fullscreen would allow the window to be moved to the front of other windows, 
 				// which we can't undo at the moment without finer window depth/z control.
 				//ImGui::MenuItem("Fullscreen", NULL, &opt_fullscreen_persistant);
+
+				if (ImGui::MenuItem("Serialize"))
+				{
+					SceneSerializer serializer(m_ActiveScene);
+					serializer.Serialize("assets/scenes/Example.evil");
+				}
+
+				if (ImGui::MenuItem("Deserialize"))
+				{
+					SceneSerializer serializer(m_ActiveScene);
+					serializer.Deserialize("assets/scenes/Example.evil");
+				}
 
 				if (ImGui::MenuItem("Exit")) Evil::Application::Get().Close();
 				ImGui::EndMenu();
