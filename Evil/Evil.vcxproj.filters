@@ -1425,13 +1425,15 @@
     <ClInclude Include="src\Evil\Scene\SceneCamera.h">
       <Filter>src\Evil\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="src\Evil\Scene\SceneSerializer.h">
+      <Filter>src\Evil\Scene</Filter>
+    </ClInclude>
     <ClInclude Include="src\Evil\Scene\ScriptableEntity.h">
       <Filter>src\Evil\Scene</Filter>
     </ClInclude>
     <ClInclude Include="src\evilpch.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Evil\Scene\SceneSerializer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vendor\stb_image\stb_image.cpp">
@@ -1533,9 +1535,11 @@
     <ClCompile Include="src\Evil\Scene\SceneCamera.cpp">
       <Filter>src\Evil\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="src\Evil\Scene\SceneSerializer.cpp">
+      <Filter>src\Evil\Scene</Filter>
+    </ClCompile>
     <ClCompile Include="src\evilpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Evil\Scene\SceneSerializer.cpp" />
   </ItemGroup>
 </Project>

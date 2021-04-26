@@ -144,7 +144,6 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Evil\Scene\SceneSerializer.h" />
     <ClInclude Include="Vendor\glm\glm\common.hpp" />
     <ClInclude Include="Vendor\glm\glm\detail\_features.hpp" />
     <ClInclude Include="Vendor\glm\glm\detail\_fixes.hpp" />
@@ -600,11 +599,11 @@
     <ClInclude Include="src\Evil\Scene\Entity.h" />
     <ClInclude Include="src\Evil\Scene\Scene.h" />
     <ClInclude Include="src\Evil\Scene\SceneCamera.h" />
+    <ClInclude Include="src\Evil\Scene\SceneSerializer.h" />
     <ClInclude Include="src\Evil\Scene\ScriptableEntity.h" />
     <ClInclude Include="src\evilpch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Evil\Scene\SceneSerializer.cpp" />
     <ClCompile Include="Vendor\stb_image\stb_image.cpp" />
     <ClCompile Include="src\Evil\Core\Application.cpp" />
     <ClCompile Include="src\Evil\Core\Layer.cpp" />
@@ -638,6 +637,7 @@
     <ClCompile Include="src\Evil\Scene\Entity.cpp" />
     <ClCompile Include="src\Evil\Scene\Scene.cpp" />
     <ClCompile Include="src\Evil\Scene\SceneCamera.cpp" />
+    <ClCompile Include="src\Evil\Scene\SceneSerializer.cpp" />
     <ClCompile Include="src\evilpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
