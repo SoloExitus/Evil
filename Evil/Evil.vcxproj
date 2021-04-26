@@ -144,6 +144,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Evil\Utils\PlatformUtils.h" />
     <ClInclude Include="Vendor\glm\glm\common.hpp" />
     <ClInclude Include="Vendor\glm\glm\detail\_features.hpp" />
     <ClInclude Include="Vendor\glm\glm\detail\_fixes.hpp" />
@@ -604,6 +605,7 @@
     <ClInclude Include="src\evilpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Evil\Platform\Windows\WindowsPlatformUtils.cpp" />
     <ClCompile Include="Vendor\stb_image\stb_image.cpp" />
     <ClCompile Include="src\Evil\Core\Application.cpp" />
     <ClCompile Include="src\Evil\Core\Layer.cpp" />
