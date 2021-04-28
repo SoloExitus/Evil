@@ -21,26 +21,27 @@ workspace "Evil"
 		"MultiProcessorCompile"
 	}
 
-	outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
-	-- Include directories relative to root folder (solution directory)
-	IncludeDir = {}
-	IncludeDir["GLFW"] = "%{wks.location}/Evil/Vendor/GLFW/include"
-	IncludeDir["Glad"] = "%{wks.location}/Evil/Vendor/Glad/include"
-	IncludeDir["ImGui"] = "%{wks.location}/Evil/Vendor/imgui"
-	IncludeDir["glm"] = "%{wks.location}/Evil/Vendor/glm"
-	IncludeDir["stb_image"] = "%{wks.location}/Evil/Vendor/stb_image"
-	IncludeDir["entt"] = "%{wks.location}/Evil/Vendor/entt/include"
-	IncludeDir["yaml_cpp"] = "%{wks.location}/Evil/Vendor/yaml-cpp/include"
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "%{wks.location}/Evil/Vendor/GLFW/include"
+IncludeDir["Glad"] = "%{wks.location}/Evil/Vendor/Glad/include"
+IncludeDir["ImGui"] = "%{wks.location}/Evil/Vendor/imgui"
+IncludeDir["glm"] = "%{wks.location}/Evil/Vendor/glm"
+IncludeDir["stb_image"] = "%{wks.location}/Evil/Vendor/stb_image"
+IncludeDir["entt"] = "%{wks.location}/Evil/Vendor/entt/include"
+IncludeDir["yaml_cpp"] = "%{wks.location}/Evil/Vendor/yaml-cpp/include"
+IncludeDir["ImGuizmo"] = "%{wks.location}/Evil/Vendor/ImGuizmo"
 
-	group "Dependencies"
+group "Dependencies"
 	include "Vendor/premake"
 	include "Evil/Vendor/GLFW"
 	include "Evil/Vendor/Glad"
 	include "Evil/Vendor/imgui"
 	include "Evil/Vendor/yaml-cpp"
-	group ""
+group ""
 
-	include "Evil"
-	include "Sandbox"
-	include "EvilEditor"
+include "Evil"
+include "Sandbox"
+include "EvilEditor"

@@ -77,7 +77,7 @@
       <PrecompiledHeaderFile>evilpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;GLFW_INCLUDE_NONE;EVIL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;Vendor\spdlog\include;Vendor\GLFW\include;Vendor\Glad\include;Vendor\imgui;Vendor\glm;Vendor\stb_image;Vendor\entt\include;Vendor\yaml-cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;Vendor\spdlog\include;Vendor\GLFW\include;Vendor\Glad\include;Vendor\imgui;Vendor\glm;Vendor\stb_image;Vendor\entt\include;Vendor\yaml-cpp\include;Vendor\ImGuizmo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
@@ -99,7 +99,7 @@
       <PrecompiledHeaderFile>evilpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;GLFW_INCLUDE_NONE;EVIL_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;Vendor\spdlog\include;Vendor\GLFW\include;Vendor\Glad\include;Vendor\imgui;Vendor\glm;Vendor\stb_image;Vendor\entt\include;Vendor\yaml-cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;Vendor\spdlog\include;Vendor\GLFW\include;Vendor\Glad\include;Vendor\imgui;Vendor\glm;Vendor\stb_image;Vendor\entt\include;Vendor\yaml-cpp\include;Vendor\ImGuizmo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -124,7 +124,7 @@
       <PrecompiledHeaderFile>evilpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;GLFW_INCLUDE_NONE;EVIL_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;Vendor\spdlog\include;Vendor\GLFW\include;Vendor\Glad\include;Vendor\imgui;Vendor\glm;Vendor\stb_image;Vendor\entt\include;Vendor\yaml-cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;Vendor\spdlog\include;Vendor\GLFW\include;Vendor\Glad\include;Vendor\imgui;Vendor\glm;Vendor\stb_image;Vendor\entt\include;Vendor\yaml-cpp\include;Vendor\ImGuizmo;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -144,7 +144,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Evil\Utils\PlatformUtils.h" />
+    <ClInclude Include="Vendor\ImGuizmo\ImGuizmo.h" />
     <ClInclude Include="Vendor\glm\glm\common.hpp" />
     <ClInclude Include="Vendor\glm\glm\detail\_features.hpp" />
     <ClInclude Include="Vendor\glm\glm\detail\_fixes.hpp" />
@@ -266,6 +266,8 @@
     <ClInclude Include="Vendor\glm\glm\ext\matrix_int4x3_sized.hpp" />
     <ClInclude Include="Vendor\glm\glm\ext\matrix_int4x4.hpp" />
     <ClInclude Include="Vendor\glm\glm\ext\matrix_int4x4_sized.hpp" />
+    <ClInclude Include="Vendor\glm\glm\ext\matrix_integer.hpp" />
+    <ClInclude Include="Vendor\glm\glm\ext\matrix_integer.inl" />
     <ClInclude Include="Vendor\glm\glm\ext\matrix_projection.hpp" />
     <ClInclude Include="Vendor\glm\glm\ext\matrix_projection.inl" />
     <ClInclude Include="Vendor\glm\glm\ext\matrix_relational.hpp" />
@@ -316,6 +318,8 @@
     <ClInclude Include="Vendor\glm\glm\ext\scalar_integer.inl" />
     <ClInclude Include="Vendor\glm\glm\ext\scalar_packing.hpp" />
     <ClInclude Include="Vendor\glm\glm\ext\scalar_packing.inl" />
+    <ClInclude Include="Vendor\glm\glm\ext\scalar_reciprocal.hpp" />
+    <ClInclude Include="Vendor\glm\glm\ext\scalar_reciprocal.inl" />
     <ClInclude Include="Vendor\glm\glm\ext\scalar_relational.hpp" />
     <ClInclude Include="Vendor\glm\glm\ext\scalar_relational.inl" />
     <ClInclude Include="Vendor\glm\glm\ext\scalar_uint_sized.hpp" />
@@ -359,6 +363,8 @@
     <ClInclude Include="Vendor\glm\glm\ext\vector_integer.inl" />
     <ClInclude Include="Vendor\glm\glm\ext\vector_packing.hpp" />
     <ClInclude Include="Vendor\glm\glm\ext\vector_packing.inl" />
+    <ClInclude Include="Vendor\glm\glm\ext\vector_reciprocal.hpp" />
+    <ClInclude Include="Vendor\glm\glm\ext\vector_reciprocal.inl" />
     <ClInclude Include="Vendor\glm\glm\ext\vector_relational.hpp" />
     <ClInclude Include="Vendor\glm\glm\ext\vector_relational.inl" />
     <ClInclude Include="Vendor\glm\glm\ext\vector_uint1.hpp" />
@@ -401,7 +407,6 @@
     <ClInclude Include="Vendor\glm\glm\gtc\random.hpp" />
     <ClInclude Include="Vendor\glm\glm\gtc\random.inl" />
     <ClInclude Include="Vendor\glm\glm\gtc\reciprocal.hpp" />
-    <ClInclude Include="Vendor\glm\glm\gtc\reciprocal.inl" />
     <ClInclude Include="Vendor\glm\glm\gtc\round.hpp" />
     <ClInclude Include="Vendor\glm\glm\gtc\round.inl" />
     <ClInclude Include="Vendor\glm\glm\gtc\type_aligned.hpp" />
@@ -574,6 +579,7 @@
     <ClInclude Include="src\Evil\Events\KeyEvent.h" />
     <ClInclude Include="src\Evil\Events\MouseEvent.h" />
     <ClInclude Include="src\Evil\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Evil\Math\Math.h" />
     <ClInclude Include="src\Evil\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Evil\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Evil\Platform\OpenGL\OpenGLFramebuffer.h" />
@@ -602,10 +608,13 @@
     <ClInclude Include="src\Evil\Scene\SceneCamera.h" />
     <ClInclude Include="src\Evil\Scene\SceneSerializer.h" />
     <ClInclude Include="src\Evil\Scene\ScriptableEntity.h" />
+    <ClInclude Include="src\Evil\Utils\PlatformUtils.h" />
     <ClInclude Include="src\evilpch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Evil\Platform\Windows\WindowsPlatformUtils.cpp" />
+    <ClCompile Include="Vendor\ImGuizmo\ImGuizmo.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="Vendor\stb_image\stb_image.cpp" />
     <ClCompile Include="src\Evil\Core\Application.cpp" />
     <ClCompile Include="src\Evil\Core\Layer.cpp" />
@@ -614,6 +623,7 @@
     <ClCompile Include="src\Evil\Core\Window.cpp" />
     <ClCompile Include="src\Evil\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Evil\ImGui\ImGuiLayer.cpp" />
+    <ClCompile Include="src\Evil\Math\Math.cpp" />
     <ClCompile Include="src\Evil\Platform\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Evil\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Evil\Platform\OpenGL\OpenGLFramebuffer.cpp" />
@@ -622,6 +632,7 @@
     <ClCompile Include="src\Evil\Platform\OpenGL\OpenGLTexture.cpp" />
     <ClCompile Include="src\Evil\Platform\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\Evil\Platform\Windows\WindowsInput.cpp" />
+    <ClCompile Include="src\Evil\Platform\Windows\WindowsPlatformUtils.cpp" />
     <ClCompile Include="src\Evil\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Evil\Renderer\Buffer.cpp" />
     <ClCompile Include="src\Evil\Renderer\Framebuffer.cpp" />
