@@ -4,6 +4,8 @@
 
 #include "Panels/SceneHierarchyPanel.h"
 
+#include "Evil/Renderer/EditorCamera.h"
+
 namespace Evil
 {
 	class EditorLayer : public Layer
@@ -26,6 +28,8 @@ namespace Evil
 		void SaveSceneAs();
 	private:
 		OrthographicCameraController m_CameraController;
+
+		EditorCamera m_EditorCamera;
 
 		Ref<Texture2D> m_CheckerboardTexture;
 

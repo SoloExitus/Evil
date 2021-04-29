@@ -144,6 +144,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Evil\Renderer\EditorCamera.h" />
     <ClInclude Include="Vendor\ImGuizmo\ImGuizmo.h" />
     <ClInclude Include="Vendor\glm\glm\common.hpp" />
     <ClInclude Include="Vendor\glm\glm\detail\_features.hpp" />
@@ -612,6 +613,7 @@
     <ClInclude Include="src\evilpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Evil\Renderer\EditorCamera.cpp" />
     <ClCompile Include="Vendor\ImGuizmo\ImGuizmo.cpp">
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
