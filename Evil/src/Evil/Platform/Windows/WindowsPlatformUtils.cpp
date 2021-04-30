@@ -2,8 +2,9 @@
 #include "Evil/Utils/PlatformUtils.h"
 
 #include <commdlg.h>
+
 #include <GLFW/glfw3.h>
-#define GLFW_EXPOSE_NATIVE_WIN32
+	#define GLFW_EXPOSE_NATIVE_WIN32
 #include <GLFW/glfw3native.h>
 
 #include "Evil/Core/Application.h"
