@@ -38,6 +38,8 @@ namespace Evil
 		Entity m_SecondCamera;
 		Entity m_SquareEntity;
 
+		Entity m_HoveredEntity;
+
 		bool m_PrimaryCamera = true;
 
 		bool m_ViewportFocused = false, m_ViewportHovered = false;
